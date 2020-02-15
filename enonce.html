@@ -1,0 +1,1989 @@
+<!DOCTYPE html>
+
+<html  dir="ltr" lang="fr" xml:lang="fr">
+<head>
+    <title>INF1010: Énoncé TP3</title>
+    <link rel="shortcut icon" href="https://moodle.polymtl.ca/theme/image.php/boost/theme/1580744106/favicon" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="moodle, INF1010: Énoncé TP3" />
+<link rel="stylesheet" type="text/css" href="https://moodle.polymtl.ca/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.css" /><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="https://moodle.polymtl.ca/theme/styles.php/boost/1580744106_1/all" />
+<script type="text/javascript">
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/moodle.polymtl.ca","sesskey":"8TX2wyjnzX","themerev":"1580744106","slasharguments":1,"theme":"boost","iconsystemmodule":"core\/icon_system_fontawesome","jsrev":"1571144937","admin":"admin","svgicons":true,"usertimezone":"Am\u00e9rique\/Toronto","contextid":163321};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}
+if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};
+YUI_config = {"debug":false,"base":"https:\/\/moodle.polymtl.ca\/lib\/yuilib\/3.17.2\/","comboBase":"https:\/\/moodle.polymtl.ca\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/moodle.polymtl.ca\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/moodle.polymtl.ca\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/moodle.polymtl.ca\/theme\/yui_combo.php?m\/1571144937\/","combine":true,"comboBase":"https:\/\/moodle.polymtl.ca\/theme\/yui_combo.php?","ext":false,"root":"m\/1571144937\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-checknet":{"requires":["base-base","moodle-core-notification-alert","io-base"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-formchangechecker":{"requires":["base","event-focus","moodle-core-event"]},"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core-languninstallconfirm":{"requires":["base","node","moodle-core-notification-confirm","moodle-core-notification-alert"]},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-popuphelp":{"requires":["moodle-core-tooltip"]},"moodle-core-tooltip":{"requires":["base","node","io-base","moodle-core-notification-dialogue","json-parse","widget-position","widget-position-align","event-outside","cache-base"]},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-backup-backupselectall":{"requires":["node","event","node-event-simulate","anim"]},"moodle-backup-confirmcancel":{"requires":["node","node-event-simulate","moodle-core-notification-confirm"]},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-formatchooser":{"requires":["base","node","node-event-simulate"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-modchooser":{"requires":["moodle-core-chooserdialogue","moodle-course-coursebase"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-form-passwordunmask":{"requires":[]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-question-preview":{"requires":["base","dom","event-delegate","event-key","core_question_engine"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_forum-subscriptiontoggle":{"requires":["base-base","io-base"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-filter_glossary-autolinker":{"requires":["base","node","io-base","json-parse","event-delegate","overlay","moodle-core-event","moodle-core-notification-alert","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-filter_mathjaxloader-loader":{"requires":["moodle-core-event"]},"moodle-editor_atto-editor":{"requires":["node","transition","io","overlay","escape","event","event-simulate","event-custom","node-event-html5","node-event-simulate","yui-throttle","moodle-core-notification-dialogue","moodle-core-notification-confirm","moodle-editor_atto-rangy","handlebars","timers","querystring-stringify"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers","moodle-editor_atto-menu"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_grader-gradereporttable":{"requires":["base","node","event","handlebars","overlay","event-hover"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-tool_capability-search":{"requires":["base","node"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-tool_monitor-dropdown":{"requires":["base","event","node"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-warning","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_fullscreen-button":{"requires":["event-resize","moodle-editor_atto-plugin"]},"moodle-atto_generico-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_html-beautify":{},"moodle-atto_html-button":{"requires":["promise","moodle-editor_atto-plugin","moodle-atto_html-beautify","moodle-atto_html-codemirror","event-valuechange"]},"moodle-atto_html-codemirror":{"requires":["moodle-atto_html-codemirror-skin"]},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin","moodle-form-shortforms"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_recordrtc-button":{"requires":["moodle-editor_atto-plugin","moodle-atto_recordrtc-recording"]},"moodle-atto_recordrtc-recording":{"requires":["moodle-atto_recordrtc-button"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]}}},"gallery":{"name":"gallery","base":"https:\/\/moodle.polymtl.ca\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/moodle.polymtl.ca\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1571144937\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/moodle.polymtl.ca\/lib\/javascript.php\/1571144937\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"https:\/\/moodle.polymtl.ca\/lib\/javascript.php\/1571144937\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]},"mathjax":{"name":"mathjax","fullpath":"https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/mathjax\/2.7.2\/MathJax.js?delayStartupUntil=configured"}}};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42521354-1', 'polymtl.ca');
+  ga('send', 'pageview');
+
+</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
+<body  id="page-mod-resource-view" class="format-topics  path-mod path-mod-resource chrome dir-ltr lang-fr yui-skin-sam yui3-skin-sam moodle-polymtl-ca pagelayout-incourse course-29 context-163321 cmid-100374 category-19 ">
+
+<div id="page-wrapper">
+
+    <div>
+    <a class="sr-only sr-only-focusable" href="#maincontent">Passer au contenu principal</a>
+</div><script type="text/javascript" src="https://moodle.polymtl.ca/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js"></script><script type="text/javascript" src="https://moodle.polymtl.ca/lib/javascript.php/1571144937/lib/javascript-static.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+
+
+    <nav class="fixed-top navbar navbar-light bg-white navbar-expand moodle-has-zindex" aria-label="Navigation du site">
+    
+            <div data-region="drawer-toggle" class="d-inline-block mr-3">
+                <button aria-expanded="false" aria-controls="nav-drawer" type="button" class="btn nav-link float-sm-left mr-1 btn-light bg-gray" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav"><i class="icon fa fa-bars fa-fw " aria-hidden="true"  ></i><span class="sr-only">Panneau latéral</span></button>
+            </div>
+    
+            <a href="https://moodle.polymtl.ca" class="navbar-brand has-logo
+                    ">
+                    <span class="logo d-none d-sm-inline">
+                        <img src="https://moodle.polymtl.ca/pluginfile.php/1/core_admin/logocompact/100x100/1580744106/logo_small_boost.png" alt="Moodle">
+                    </span>
+                <span class="site-name d-none d-md-inline">Moodle</span>
+            </a>
+    
+            <ul class="navbar-nav d-none d-md-flex">
+                <!-- custom_menu -->
+                <li class="dropdown nav-item">
+    <a class="dropdown-toggle nav-link" id="drop-down-5e4728d4c8d8a5e4728d4c7bb62" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" aria-controls="drop-down-menu-5e4728d4c8d8a5e4728d4c7bb62">
+        Cours
+    </a>
+    <div class="dropdown-menu" role="menu" id="drop-down-menu-5e4728d4c8d8a5e4728d4c7bb62" aria-labelledby="drop-down-5e4728d4c8d8a5e4728d4c7bb62">
+                <a class="dropdown-item" role="menuitem" href="https://moodle.polymtl.ca/my" title="Mes cours">Mes cours</a>
+                <a class="dropdown-item" role="menuitem" href="https://moodle.polymtl.ca/course/index.php" title="Liste complète de cours">Liste complète de cours</a>
+    </div>
+</li><li class="dropdown nav-item">
+    <a class="dropdown-toggle nav-link" id="drop-down-5e4728d4c8ecb5e4728d4c7bb63" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" aria-controls="drop-down-menu-5e4728d4c8ecb5e4728d4c7bb63">
+        Aide
+    </a>
+    <div class="dropdown-menu" role="menu" id="drop-down-menu-5e4728d4c8ecb5e4728d4c7bb63" aria-labelledby="drop-down-5e4728d4c8ecb5e4728d4c7bb63">
+                <a class="dropdown-item" role="menuitem" href="https://moodle.polymtl.ca/pluginfile.php/226238/mod_resource/content/22/faq_etud.html" target="_blank" title="FAQ pour ÉTUDIANTS">FAQ pour ÉTUDIANTS</a>
+                <a class="dropdown-item" role="menuitem" href="https://moodle.polymtl.ca/pluginfile.php/226239/mod_resource/content/44/faq.html" target="_blank" title="FAQ pour ENSEIGNANTS">FAQ pour ENSEIGNANTS</a>
+                <a class="dropdown-item" role="menuitem" href="https://moodle.polymtl.ca/course/view.php?name=SOUTIEN" title="Site de soutien pour éditeurs">Site de soutien pour éditeurs</a>
+    </div>
+</li><li class="dropdown nav-item">
+    <a class="dropdown-toggle nav-link" id="drop-down-5e4728d4c90675e4728d4c7bb64" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" aria-controls="drop-down-menu-5e4728d4c90675e4728d4c7bb64">
+        Liens utiles
+    </a>
+    <div class="dropdown-menu" role="menu" id="drop-down-menu-5e4728d4c90675e4728d4c7bb64" aria-labelledby="drop-down-5e4728d4c90675e4728d4c7bb64">
+                <a class="dropdown-item" role="menuitem" href="https://polyfolio.polymtl.ca/" target="_blank" title="Polyfolio">Polyfolio</a>
+                <a class="dropdown-item" role="menuitem" href="https://dossieretudiant.polymtl.ca/" target="_blank" title="Dossier étudiant">Dossier étudiant</a>
+                <a class="dropdown-item" role="menuitem" href="https://www.polymtl.ca/etudes/programmes/qualites-developper-pour-les-etudiants-en-ingenierie" target="_blank" title="Les 12 qualités requises en génie">Les 12 qualités requises en génie</a>
+                <a class="dropdown-item" role="menuitem" href="http://www.polymtl.ca/etudes/cours/index.php" target="_blank" title="Répertoire des cours">Répertoire des cours</a>
+                <a class="dropdown-item" role="menuitem" href="http://www.polymtl.ca/biblio/" target="_blank" title="Bibliothèque">Bibliothèque</a>
+                <a class="dropdown-item" role="menuitem" href="http://www.imp.polymtl.ca/horde-3.0.5/imp/login.php" target="_blank" title="Courriel IMP">Courriel IMP</a>
+    </div>
+</li>
+                <!-- page_heading_menu -->
+                
+            </ul>
+            <ul class="nav navbar-nav ml-auto">
+                <div class="d-none d-lg-block">
+                <div class="search-input-wrapper nav-link" id="5e4728d4c914a"><div role="button" tabindex="0"><i class="icon fa fa-search fa-fw "  title="Recherche" aria-label="Recherche"></i></div><form class="search-input-form" action="https://moodle.polymtl.ca/search/index.php"><label for="id_q_5e4728d4c914a" class="accesshide">Taper votre requête</label><input type="text" name="q" placeholder="Recherche" size="13" tabindex="-1" id="id_q_5e4728d4c914a" class="form-control"></input><input type="hidden" name="context" value="163321" /></form></div>
+            </div>
+                <!-- navbar_plugin_output -->
+                <li class="nav-item">
+                <div class="float-right popover-region collapsed">
+    <a id="message-drawer-toggle-5e4728d4c9afd5e4728d4c7bb65" class="nav-link d-inline-block popover-region-toggle position-relative" href="#"
+            role="button">
+        <i class="icon fa fa-comment fa-fw "  title="Ouvrir/fermer le tiroir des messages" aria-label="Ouvrir/fermer le tiroir des messages"></i>
+        <div class="count-container hidden" data-region="count-container"
+        aria-label="Il y a 0 conversations non lues">0</div>
+    </a>
+</div>
+                </li>
+                <!-- user_menu -->
+                <li class="nav-item d-flex align-items-center">
+                    <div class="usermenu"><div class="action-menu moodle-actionmenu nowrap-items d-inline" id="action-menu-1" data-enhance="moodle-core-actionmenu">
+
+        <div class="menubar d-flex " id="action-menu-1-menubar" role="menubar">
+
+            
+
+
+                <div class="action-menu-trigger">
+                    <div class="dropdown">
+                        <a href="#" tabindex="0" class=" dropdown-toggle icon-no-margin" id="dropdown-1" aria-label="Menu utilisateur" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="action-menu-1-menu">
+                            
+                            <span class="userbutton"><span class="usertext mr-1">Samuel Lavallée</span><span class="avatars"><span class="avatar current"><img src="https://moodle.polymtl.ca/theme/image.php/boost/core/1580744106/u/f2" class="userpicture defaultuserpic" width="35" height="35" role="presentation" aria-hidden="true" /></span></span></span>
+                                
+                            <b class="caret"></b>
+                        </a>
+                            <div class="dropdown-menu dropdown-menu-right menu  align-tr-br" id="action-menu-1-menu" data-rel="menu-content" aria-labelledby="action-menu-toggle-1" role="menu" data-align="tr-br" id="dropdown-menu-1">
+                                        <a href="https://moodle.polymtl.ca/my/" class="dropdown-item menu-action" role="menuitem" data-title="mymoodle,admin" aria-labelledby="actionmenuaction-1">
+                                                <i class="icon fa fa-tachometer fa-fw " aria-hidden="true"  ></i>
+                                            <span class="menu-action-text" id="actionmenuaction-1">
+                                                Tableau de bord
+                                            </span>
+                                        </a>
+                                        <div class="dropdown-divider" role="presentation"><span class="filler">&nbsp;</span></div>
+                                        <a href="https://moodle.polymtl.ca/user/profile.php?id=81604" class="dropdown-item menu-action" role="menuitem" data-title="profile,moodle" aria-labelledby="actionmenuaction-2">
+                                                <i class="icon fa fa-user fa-fw " aria-hidden="true"  ></i>
+                                            <span class="menu-action-text" id="actionmenuaction-2">
+                                                Profil
+                                            </span>
+                                        </a>
+                                        <a href="https://moodle.polymtl.ca/grade/report/overview/index.php" class="dropdown-item menu-action" role="menuitem" data-title="grades,grades" aria-labelledby="actionmenuaction-3">
+                                                <i class="icon fa fa-table fa-fw " aria-hidden="true"  ></i>
+                                            <span class="menu-action-text" id="actionmenuaction-3">
+                                                Notes
+                                            </span>
+                                        </a>
+                                        <a href="https://moodle.polymtl.ca/message/index.php" class="dropdown-item menu-action" role="menuitem" data-title="messages,message" aria-labelledby="actionmenuaction-4">
+                                                <i class="icon fa fa-comment fa-fw " aria-hidden="true"  ></i>
+                                            <span class="menu-action-text" id="actionmenuaction-4">
+                                                Messages personnels
+                                            </span>
+                                        </a>
+                                        <a href="https://moodle.polymtl.ca/user/preferences.php" class="dropdown-item menu-action" role="menuitem" data-title="preferences,moodle" aria-labelledby="actionmenuaction-5">
+                                                <i class="icon fa fa-wrench fa-fw " aria-hidden="true"  ></i>
+                                            <span class="menu-action-text" id="actionmenuaction-5">
+                                                Préférences
+                                            </span>
+                                        </a>
+                                        <div class="dropdown-divider" role="presentation"><span class="filler">&nbsp;</span></div>
+                                        <a href="https://moodle.polymtl.ca/login/logout.php?sesskey=8TX2wyjnzX" class="dropdown-item menu-action" role="menuitem" data-title="logout,moodle" aria-labelledby="actionmenuaction-6">
+                                                <i class="icon fa fa-sign-out fa-fw " aria-hidden="true"  ></i>
+                                            <span class="menu-action-text" id="actionmenuaction-6">
+                                                Déconnexion
+                                            </span>
+                                        </a>
+                            </div>
+                    </div>
+                </div>
+
+        </div>
+
+</div></div>
+                </li>
+            </ul>
+            <!-- search_box -->
+    </nav>
+    
+
+    <div id="page" class="container-fluid">
+        <header id="page-header" class="row">
+    <div class="col-12 pt-3 pb-3">
+        <div class="card ">
+            <div class="card-body ">
+                <div class="d-flex">
+                    <div class="mr-auto">
+                        <div class="page-context-header"><div class="page-header-headings"><h1>INF1010 - Programmation orientée objet</h1></div></div>
+                    </div>
+
+                </div>
+                <div class="d-flex flex-wrap">
+                    <div id="page-navbar">
+                        <nav role="navigation" aria-label="Barre de navigation">
+    <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="https://moodle.polymtl.ca/my/"  >Tableau de bord</a>
+                </li>
+                <li class="breadcrumb-item">Mes cours</li>
+                <li class="breadcrumb-item">
+                    <a href="https://moodle.polymtl.ca/course/view.php?id=29"  title="INF1010 - Programmation orientée objet">INF1010 - Programmation orientée objet</a>
+                </li>
+                <li class="breadcrumb-item">Travaux pratiques</li>
+                <li class="breadcrumb-item">
+                    <a href="https://moodle.polymtl.ca/mod/resource/view.php?id=100374" aria-current="page" title="Fichier">Énoncé TP3</a>
+                </li>
+    </ol>
+</nav>
+                    </div>
+                    <div class="ml-auto d-flex">
+                        
+                    </div>
+                    <div id="course-header">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div id="page-content" class="row pb-3">
+            <div id="region-main-box" class="col-12">
+										
+				<section id="region-main"  aria-label="Contenu">
+                    <span class="notifications" id="user-notifications"></span>
+                    <div role="main"><span id="maincontent"></span><h2>Énoncé TP3</h2><div id="resourceintro" class="box py-3 mod_introbox"><div class="no-overflow"><p>Énoncé TP3</p></div></div><div class="resourceworkaround">Cliquer le lien <a href="https://moodle.polymtl.ca/pluginfile.php/163321/mod_resource/content/33/TP3-H20.pdf" onclick="window.open('https://moodle.polymtl.ca/pluginfile.php/163321/mod_resource/content/33/TP3-H20.pdf', '', 'width=710,height=550,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;">TP3-H20.pdf</a> pour afficher le fichier.</div></div>
+                    <div class="mt-5 mb-1 activity-navigation">
+<div class="row">
+    <div class="col-md-4">        <div class="float-left">
+                <a href="https://moodle.polymtl.ca/mod/assign/view.php?id=331358&forceview=1" id="prev-activity-link" class="btn btn-link"  title="Remise TP2" >&#x25C4; Remise TP2</a>
+
+        </div>
+</div>
+    <div class="col-md-4">        <div class="mdl-align">
+            <div class="urlselect">
+    <form method="post" action="https://moodle.polymtl.ca/course/jumpto.php" class="form-inline" id="url_select_f5e4728d4c7bb614">
+        <input type="hidden" name="sesskey" value="8TX2wyjnzX">
+            <label for="jump-to-activity" class="sr-only">
+                Aller à…
+            </label>
+        <select  id="jump-to-activity" class="custom-select urlselect" name="jump"
+                 >
+                    <option value="" selected>Aller à…</option>
+                    <option value="/mod/page/view.php?id=31902&amp;forceview=1" >Objectifs du cours</option>
+                    <option value="/mod/url/view.php?id=31904&amp;forceview=1" >Horaire</option>
+                    <option value="/mod/resource/view.php?id=93083&amp;forceview=1" >Plan de cours</option>
+                    <option value="/mod/page/view.php?id=97337&amp;forceview=1" >Équipe Pédagogique</option>
+                    <option value="/mod/resource/view.php?id=327227&amp;forceview=1" >Calendrier de la session</option>
+                    <option value="/mod/resource/view.php?id=94320&amp;forceview=1" >FAQ et Documentation</option>
+                    <option value="/mod/resource/view.php?id=153052&amp;forceview=1" >Guide de codage</option>
+                    <option value="/mod/resource/view.php?id=330735&amp;forceview=1" >CPPItertools</option>
+                    <option value="/mod/resource/view.php?id=330737&amp;forceview=1" >GSL</option>
+                    <option value="/mod/choicegroup/view.php?id=329365&amp;forceview=1" >Formation des binômes pour les TP (Section 1L)</option>
+                    <option value="/mod/feedback/view.php?id=332975&amp;forceview=1" >Évaluation formative de mi-session - 04C</option>
+                    <option value="/mod/feedback/view.php?id=332976&amp;forceview=1" >Évaluation formative de mi-session - 05C</option>
+                    <option value="/mod/quiz/view.php?id=331320&amp;forceview=1" >Quiz 1 - 29 janvier 2020, 8h30 (02C)</option>
+                    <option value="/mod/quiz/view.php?id=330719&amp;forceview=1" >Quiz 1 - Section 5 - 4 février 2020, 18h30</option>
+                    <option value="/mod/resource/view.php?id=108799&amp;forceview=1" >Énoncé TP1</option>
+                    <option value="/mod/resource/view.php?id=108800&amp;forceview=1" >Fichiers TP1</option>
+                    <option value="/mod/assign/view.php?id=329383&amp;forceview=1" >Remise TP1</option>
+                    <option value="/mod/resource/view.php?id=99661&amp;forceview=1" >Énoncé TP2</option>
+                    <option value="/mod/resource/view.php?id=99663&amp;forceview=1" >Fichiers TP2</option>
+                    <option value="/mod/assign/view.php?id=331358&amp;forceview=1" >Remise TP2</option>
+                    <option value="/mod/resource/view.php?id=100375&amp;forceview=1" >Fichiers TP3</option>
+                    <option value="/mod/assign/view.php?id=333209&amp;forceview=1" >Remise TP3</option>
+                    <option value="/mod/resource/view.php?id=93920&amp;forceview=1" >Concepts de base</option>
+                    <option value="/mod/resource/view.php?id=253724&amp;forceview=1" >Constructeurs</option>
+                    <option value="/mod/resource/view.php?id=197899&amp;forceview=1" >Code cours 1 (téléchargement)</option>
+                    <option value="/mod/url/view.php?id=197919&amp;forceview=1" >Code cours 1 (en ligne)</option>
+                    <option value="/mod/resource/view.php?id=93088&amp;forceview=1" >Point</option>
+                    <option value="/mod/resource/view.php?id=93087&amp;forceview=1" >Pixel</option>
+                    <option value="/mod/resource/view.php?id=93089&amp;forceview=1" >Personne</option>
+                    <option value="/mod/resource/view.php?id=329264&amp;forceview=1" >Matrice v.0 (de INF1005C)</option>
+                    <option value="/mod/resource/view.php?id=329265&amp;forceview=1" >Matrice v.1 (struct; matière INF1005C)</option>
+                    <option value="/mod/resource/view.php?id=329266&amp;forceview=1" >Matrice v.2 (objet)</option>
+                    <option value="/mod/resource/view.php?id=93091&amp;forceview=1" >Sièges</option>
+                    <option value="/mod/resource/view.php?id=93092&amp;forceview=1" >Tableau noir</option>
+                    <option value="/mod/resource/view.php?id=93093&amp;forceview=1" >Train</option>
+                    <option value="/mod/resource/view.php?id=93095&amp;forceview=1" >Point 3D</option>
+                    <option value="/mod/quiz/view.php?id=93700&amp;forceview=1" >Quiz : Concepts de base</option>
+                    <option value="/mod/resource/view.php?id=93103&amp;forceview=1" >Allocation dynamique</option>
+                    <option value="/mod/resource/view.php?id=93104&amp;forceview=1" >Rappels sur les opérateurs &amp; et *</option>
+                    <option value="/mod/resource/view.php?id=198274&amp;forceview=1" >Code cours 2 (téléchargement)</option>
+                    <option value="/mod/url/view.php?id=198267&amp;forceview=1" >Code cours 2 (en ligne)</option>
+                    <option value="/mod/resource/view.php?id=93109&amp;forceview=1" >Point</option>
+                    <option value="/mod/resource/view.php?id=93110&amp;forceview=1" >Poire</option>
+                    <option value="/mod/resource/view.php?id=93111&amp;forceview=1" >Tableaux</option>
+                    <option value="/mod/resource/view.php?id=93114&amp;forceview=1" >Bonnes pratiques</option>
+                    <option value="/mod/resource/view.php?id=93115&amp;forceview=1" >Constructeurs</option>
+                    <option value="/mod/resource/view.php?id=93119&amp;forceview=1" >Magie</option>
+                    <option value="/mod/quiz/view.php?id=93765&amp;forceview=1" >Quiz : Allocation dynamique</option>
+                    <option value="/mod/resource/view.php?id=93338&amp;forceview=1" >Pointeurs intelligents</option>
+                    <option value="/mod/resource/view.php?id=206625&amp;forceview=1" >Code cours 18 (téléchargement)</option>
+                    <option value="/mod/url/view.php?id=206680&amp;forceview=1" >Code cours 18 (en ligne)</option>
+                    <option value="/mod/resource/view.php?id=329272&amp;forceview=1" >exempleShare ptr</option>
+                    <option value="/mod/resource/view.php?id=329273&amp;forceview=1" >exemple unique shared ptr</option>
+                    <option value="/mod/resource/view.php?id=329267&amp;forceview=1" >Matrice v.3 (avec unique_ptr)</option>
+                    <option value="/mod/url/view.php?id=206681&amp;forceview=1" >Pointeurs intelligents vs. Gestion des exceptions (en ligne)</option>
+                    <option value="/mod/url/view.php?id=206682&amp;forceview=1" >Pointeurs intelligents vs. Gestion des exceptions (solution pointeurs intelligents) (en ligne)</option>
+                    <option value="/mod/url/view.php?id=206683&amp;forceview=1" >Pointeurs intelligents vs. Gestion des exceptions (solution gestion des exceptions) (en ligne)</option>
+                    <option value="/mod/resource/view.php?id=93349&amp;forceview=1" >Bibliothèque électronique (ptr)</option>
+                    <option value="/mod/resource/view.php?id=93144&amp;forceview=1" >Méthodes constantes</option>
+                    <option value="/mod/resource/view.php?id=200090&amp;forceview=1" >Code cours 3 (téléchargement)</option>
+                    <option value="/mod/url/view.php?id=200092&amp;forceview=1" >Code cours 3 (en ligne)</option>
+                    <option value="/mod/resource/view.php?id=93146&amp;forceview=1" >Alpiniste</option>
+                    <option value="/mod/resource/view.php?id=93148&amp;forceview=1" >Imprimante</option>
+                    <option value="/mod/resource/view.php?id=93149&amp;forceview=1" >Téléphone</option>
+                    <option value="/mod/resource/view.php?id=93150&amp;forceview=1" >Tourne-disque</option>
+                    <option value="/mod/quiz/view.php?id=93770&amp;forceview=1" >Quiz : Méthodes constantes</option>
+                    <option value="/mod/resource/view.php?id=93124&amp;forceview=1" >Passage de paramètres</option>
+                    <option value="/mod/resource/view.php?id=200093&amp;forceview=1" >Code cours 4 (téléchargement)</option>
+                    <option value="/mod/url/view.php?id=200094&amp;forceview=1" >Code cours 4 (en ligne)</option>
+                    <option value="/mod/resource/view.php?id=93129&amp;forceview=1" >Cible</option>
+                    <option value="/mod/resource/view.php?id=93130&amp;forceview=1" >Passage d'entiers et de Points</option>
+                    <option value="/mod/resource/view.php?id=93133&amp;forceview=1" >Longueur de laine</option>
+                    <option value="/mod/resource/view.php?id=93134&amp;forceview=1" >Piscine</option>
+                    <option value="/mod/url/view.php?id=200112&amp;forceview=1" >Sphere (en ligne)</option>
+                    <option value="/mod/url/view.php?id=200833&amp;forceview=1" >Sphere (solution) (en ligne)</option>
+                    <option value="/mod/quiz/view.php?id=282803&amp;forceview=1" >Quiz : Passage de paramètres</option>
+                    <option value="/mod/polyvideo/view.php?id=280159&amp;forceview=1" >Passage des paramètres en programmation orientée objet</option>
+                    <option value="/mod/resource/view.php?id=93153&amp;forceview=1" >Composition et agrégation</option>
+                    <option value="/mod/resource/view.php?id=166299&amp;forceview=1" >Compléments : Composition vs agrégation</option>
+                    <option value="/mod/resource/view.php?id=200100&amp;forceview=1" >Code cours 5 (téléchargement)</option>
+                    <option value="/mod/url/view.php?id=200113&amp;forceview=1" >Code cours 5 (en ligne)</option>
+                    <option value="/mod/resource/view.php?id=93147&amp;forceview=1" >Jardin</option>
+                    <option value="/mod/resource/view.php?id=93159&amp;forceview=1" >Clubs de lecture</option>
+                    <option value="/mod/resource/view.php?id=93158&amp;forceview=1" >Centre de recherche</option>
+                    <option value="/mod/resource/view.php?id=93160&amp;forceview=1" >Video</option>
+                    <option value="/mod/resource/view.php?id=93161&amp;forceview=1" >Cercle</option>
+                    <option value="/mod/resource/view.php?id=93162&amp;forceview=1" >Trois cercles</option>
+                    <option value="/mod/resource/view.php?id=109714&amp;forceview=1" >Ordinateur</option>
+                    <option value="/mod/resource/view.php?id=93165&amp;forceview=1" >Affichage</option>
+                    <option value="/mod/resource/view.php?id=93167&amp;forceview=1" >Bureaux</option>
+                    <option value="/mod/quiz/view.php?id=93769&amp;forceview=1" >Quiz : Composition et Agrégation</option>
+                    <option value="/mod/polyvideo/view.php?id=280150&amp;forceview=1" >La composition en programmation orientée objet</option>
+                    <option value="/mod/polyvideo/view.php?id=280152&amp;forceview=1" >L'agrégation en programmation orientée objet</option>
+                    <option value="/mod/polyvideo/view.php?id=280154&amp;forceview=1" >Implémentation de la composition et de l'agrégation</option>
+                    <option value="/mod/resource/view.php?id=93173&amp;forceview=1" >Vecteurs</option>
+                    <option value="/mod/resource/view.php?id=253723&amp;forceview=1" >Initialisation d'objet V11</option>
+                    <option value="/mod/resource/view.php?id=200781&amp;forceview=1" >Code cours 6 (téléchargement)</option>
+                    <option value="/mod/url/view.php?id=200830&amp;forceview=1" >Code cours 6 (en ligne)</option>
+                    <option value="/mod/resource/view.php?id=93178&amp;forceview=1" >Insert et erase</option>
+                    <option value="/mod/resource/view.php?id=93179&amp;forceview=1" >Patate chaude</option>
+                    <option value="/mod/resource/view.php?id=93180&amp;forceview=1" >Stratégie d'allocation</option>
+                    <option value="/mod/resource/view.php?id=99239&amp;forceview=1" >Vecteurs Temps Exécution</option>
+                    <option value="/mod/resource/view.php?id=93183&amp;forceview=1" >Vecteur de pointeurs</option>
+                    <option value="/mod/url/view.php?id=200834&amp;forceview=1" >Livre (en ligne)</option>
+                    <option value="/mod/resource/view.php?id=93187&amp;forceview=1" >Mission</option>
+                    <option value="/mod/quiz/view.php?id=93771&amp;forceview=1" >Quiz : Vecteurs</option>
+                    <option value="/mod/resource/view.php?id=93189&amp;forceview=1" >Surcharge des opérateurs (29 janvier 2019)</option>
+                    <option value="/mod/resource/view.php?id=200823&amp;forceview=1" >Code cours 7 (téléchargement)</option>
+                    <option value="/mod/url/view.php?id=200831&amp;forceview=1" >Code cours 7 (en ligne)</option>
+                    <option value="/mod/resource/view.php?id=93194&amp;forceview=1" >Point</option>
+                    <option value="/mod/resource/view.php?id=93195&amp;forceview=1" >Vecteur 3D</option>
+                    <option value="/mod/url/view.php?id=200838&amp;forceview=1" >Nombre complexe (en ligne)</option>
+                    <option value="/mod/url/view.php?id=200839&amp;forceview=1" >Nombre complexe (solution) (en ligne)</option>
+                    <option value="/mod/resource/view.php?id=93197&amp;forceview=1" >Fraction</option>
+                    <option value="/mod/quiz/view.php?id=93776&amp;forceview=1" >Quiz : Surcharge des opérateurs</option>
+                    <option value="/mod/resource/view.php?id=93204&amp;forceview=1" >Constructeur de copie et Opérateur d'affectation (21janvier 2019.)</option>
+                    <option value="/mod/resource/view.php?id=201514&amp;forceview=1" >Code cours 8 (téléchargement)</option>
+                    <option value="/mod/url/view.php?id=201553&amp;forceview=1" >Code cours 8 (en ligne)</option>
+                    <option value="/mod/resource/view.php?id=93211&amp;forceview=1" >Contracteur</option>
+                    <option value="/mod/resource/view.php?id=93212&amp;forceview=1" >Skieur</option>
+                    <option value="/mod/resource/view.php?id=99665&amp;forceview=1" >Point</option>
+                    <option value="/mod/url/view.php?id=202220&amp;forceview=1" >Inutile (en ligne)</option>
+                    <option value="/mod/url/view.php?id=201561&amp;forceview=1" >Inutile (solution) (en ligne)</option>
+                    <option value="/mod/url/view.php?id=201558&amp;forceview=1" >Erreurs de vecteur (en ligne)</option>
+                    <option value="/mod/resource/view.php?id=93220&amp;forceview=1" >Incrémenter Décrémenter</option>
+                    <option value="/mod/resource/view.php?id=93217&amp;forceview=1" >Polygones</option>
+                    <option value="/mod/resource/view.php?id=93219&amp;forceview=1" >Trois exercices</option>
+                    <option value="/mod/quiz/view.php?id=93777&amp;forceview=1" >Quiz : This, Copie et Affectation</option>
+                    <option value="/mod/polyvideo/view.php?id=280155&amp;forceview=1" >Constructeurs et constructeurs de copie</option>
+                    <option value="/mod/polyvideo/view.php?id=280156&amp;forceview=1" >Construction de copie et opérateur =</option>
+                    <option value="/mod/resource/view.php?id=93222&amp;forceview=1" >Héritage</option>
+                    <option value="/mod/resource/view.php?id=293730&amp;forceview=1" >Conversion  Héritage (20 fév. 2019)</option>
+                    <option value="/mod/resource/view.php?id=93223&amp;forceview=1" >Polymorphisme (12 fév. 2019)</option>
+                    <option value="/mod/resource/view.php?id=293733&amp;forceview=1" >Conversion Polymorphisme (12 fév. 2019)</option>
+                    <option value="/mod/resource/view.php?id=93224&amp;forceview=1" >Compléments sur les constructeurs</option>
+                    <option value="/mod/resource/view.php?id=202206&amp;forceview=1" >Code cours 9 (téléchargement)</option>
+                    <option value="/mod/url/view.php?id=202221&amp;forceview=1" >Code cours 9 (en ligne)</option>
+                    <option value="/mod/resource/view.php?id=93232&amp;forceview=1" >Formes</option>
+                    <option value="/mod/resource/view.php?id=93233&amp;forceview=1" >Horloges</option>
+                    <option value="/mod/resource/view.php?id=93234&amp;forceview=1" >Musique</option>
+                    <option value="/mod/resource/view.php?id=93237&amp;forceview=1" >Héritage: Affichage</option>
+                    <option value="/mod/url/view.php?id=202222&amp;forceview=1" >Héritage: Affichage (en ligne)</option>
+                    <option value="/mod/resource/view.php?id=93238&amp;forceview=1" >Héritage: Points</option>
+                    <option value="/mod/url/view.php?id=201560&amp;forceview=1" >Héritage: Points (en ligne)</option>
+                    <option value="/mod/url/view.php?id=202224&amp;forceview=1" >Héritage: Points (solution) (en ligne)</option>
+                    <option value="/mod/resource/view.php?id=93240&amp;forceview=1" >Héritage: Végétaux</option>
+                    <option value="/mod/url/view.php?id=202225&amp;forceview=1" >Héritage: Végétaux (en ligne)</option>
+                    <option value="/mod/url/view.php?id=202227&amp;forceview=1" >Polymorphisme: Affichage (en ligne)</option>
+                    <option value="/mod/url/view.php?id=202254&amp;forceview=1" >Polymorphisme: InfoPerso (en ligne)</option>
+                    <option value="/mod/resource/view.php?id=93241&amp;forceview=1" >ABCD (héritage)</option>
+                    <option value="/mod/resource/view.php?id=93245&amp;forceview=1" >Cartes (polymorphisme)</option>
+                    <option value="/mod/resource/view.php?id=93246&amp;forceview=1" >Hotel (polymorphisme)</option>
+                    <option value="/mod/resource/view.php?id=267645&amp;forceview=1" >RPG Énoncé</option>
+                    <option value="/mod/resource/view.php?id=267646&amp;forceview=1" >RPG Solution</option>
+                    <option value="/mod/quiz/view.php?id=93778&amp;forceview=1" >Quiz : Héritage</option>
+                    <option value="/mod/quiz/view.php?id=93787&amp;forceview=1" >Quiz : Polymorphisme</option>
+                    <option value="/mod/polyvideo/view.php?id=280147&amp;forceview=1" >L'héritage en programmation orientée objet</option>
+                    <option value="/mod/polyvideo/view.php?id=280136&amp;forceview=1" >Résolution statique des liens en C++</option>
+                    <option value="/mod/polyvideo/view.php?id=280140&amp;forceview=1" >Polymorphisme et liaisons dynamiques</option>
+                    <option value="/mod/polyvideo/view.php?id=280145&amp;forceview=1" >Classe abstraite et fonction virtuelle pure</option>
+                    <option value="/mod/resource/view.php?id=93248&amp;forceview=1" >Héritage multiple</option>
+                    <option value="/mod/resource/view.php?id=203085&amp;forceview=1" >Code cours 10 (téléchargement)</option>
+                    <option value="/mod/url/view.php?id=203088&amp;forceview=1" >Code cours 10 (en ligne)</option>
+                    <option value="/mod/resource/view.php?id=93261&amp;forceview=1" >Parent travailleur</option>
+                    <option value="/mod/resource/view.php?id=93264&amp;forceview=1" >Véhicules</option>
+                    <option value="/mod/quiz/view.php?id=93788&amp;forceview=1" >Quiz : Héritage multiple</option>
+                    <option value="/mod/resource/view.php?id=93266&amp;forceview=1" >Listes liées</option>
+                    <option value="/mod/resource/view.php?id=93271&amp;forceview=1" >Liaisons manuelles</option>
+                    <option value="/mod/resource/view.php?id=93272&amp;forceview=1" >À liens doubles de strings</option>
+                    <option value="/mod/resource/view.php?id=93275&amp;forceview=1" >Modifications</option>
+                    <option value="/mod/url/view.php?id=204193&amp;forceview=1" >Fait à la main (en ligne)</option>
+                    <option value="/mod/url/view.php?id=204190&amp;forceview=1" >Fait à la main (solution) (en ligne)</option>
+                    <option value="/mod/resource/view.php?id=93279&amp;forceview=1" >Listes génériques</option>
+                    <option value="/mod/resource/view.php?id=93281&amp;forceview=1" >Fonctions et classes génériques</option>
+                    <option value="/mod/resource/view.php?id=93282&amp;forceview=1" >Compilation séparée</option>
+                    <option value="/mod/resource/view.php?id=93289&amp;forceview=1" >Boites aux lettres</option>
+                    <option value="/mod/resource/view.php?id=93291&amp;forceview=1" >Paires et print</option>
+                    <option value="/mod/url/view.php?id=204189&amp;forceview=1" >Inverser (en ligne)</option>
+                    <option value="/mod/url/view.php?id=204194&amp;forceview=1" >Inverser (solution) (en ligne)</option>
+                    <option value="/mod/url/view.php?id=204196&amp;forceview=1" >Triplet et médiane (en ligne)</option>
+                    <option value="/mod/url/view.php?id=204195&amp;forceview=1" >Triplet et médiane (solution) (en ligne)</option>
+                    <option value="/mod/resource/view.php?id=232482&amp;forceview=1" >STL Documentation  fournie à l'examen final mise à  jour le 26 avril 2019</option>
+                    <option value="/mod/resource/view.php?id=129659&amp;forceview=1" >Introduction à la STL</option>
+                    <option value="/mod/resource/view.php?id=269617&amp;forceview=1" >Fonctions Lambda</option>
+                    <option value="/mod/resource/view.php?id=204795&amp;forceview=1" >Code cours 13 (téléchargement)</option>
+                    <option value="/mod/url/view.php?id=204794&amp;forceview=1" >Code cours 13 (en ligne)</option>
+                    <option value="/mod/resource/view.php?id=93555&amp;forceview=1" >Conteneurs Associatifs</option>
+                    <option value="/mod/resource/view.php?id=93553&amp;forceview=1" >Foncteurs et Algorithmes</option>
+                    <option value="/mod/resource/view.php?id=93549&amp;forceview=1" >Listes d'épicerie</option>
+                    <option value="/mod/resource/view.php?id=93551&amp;forceview=1" >Foncteurs générateurs et de tri</option>
+                    <option value="/mod/resource/view.php?id=102930&amp;forceview=1" >Stl Map et Foncteur</option>
+                    <option value="/mod/resource/view.php?id=93550&amp;forceview=1" >Fibonacci</option>
+                    <option value="/mod/resource/view.php?id=93290&amp;forceview=1" >Page Web</option>
+                    <option value="/mod/url/view.php?id=205422&amp;forceview=1" >Amélioration de code (en ligne)</option>
+                    <option value="/mod/url/view.php?id=205423&amp;forceview=1" >Amélioration de code (solution) (en ligne)</option>
+                    <option value="/mod/resource/view.php?id=93682&amp;forceview=1" >Choix de conteneur</option>
+                    <option value="/mod/resource/view.php?id=93683&amp;forceview=1" >Fonctions globales génériques pour conteneurs</option>
+                    <option value="/mod/resource/view.php?id=270523&amp;forceview=1" >STL Exercices (bind, containeurs) M.Fokaefs</option>
+                    <option value="/mod/url/view.php?id=93473&amp;forceview=1" >CPP Référence - Bibliothèque de conteneurs</option>
+                    <option value="/mod/url/view.php?id=204799&amp;forceview=1" >CPP Référence - Bibliothèque d'itérateurs</option>
+                    <option value="/mod/url/view.php?id=204800&amp;forceview=1" >CPP Référence - Bibliothèque algorithmique</option>
+                    <option value="/mod/url/view.php?id=204801&amp;forceview=1" >CPP Référence - Bibliothèque pour le calcul numérique</option>
+                    <option value="/mod/quiz/view.php?id=303894&amp;forceview=1" >Quiz STL pratique</option>
+                    <option value="/mod/quiz/view.php?id=259526&amp;forceview=1" >Quiz - STL</option>
+                    <option value="/mod/url/view.php?id=104383&amp;forceview=1" >Tutoriel Qt</option>
+                    <option value="/mod/url/view.php?id=192889&amp;forceview=1" >OpenClass QT et QtCreator</option>
+                    <option value="/mod/url/view.php?id=218270&amp;forceview=1" >Documentation Qt</option>
+                    <option value="/mod/resource/view.php?id=94158&amp;forceview=1" >Introduction aux interfaces graphiques</option>
+                    <option value="/mod/resource/view.php?id=206069&amp;forceview=1" >Code cours 14 (téléchargement)</option>
+                    <option value="/mod/resource/view.php?id=93831&amp;forceview=1" >Hello Qt</option>
+                    <option value="/mod/resource/view.php?id=93707&amp;forceview=1" >Course de slider MVC (Qt)</option>
+                    <option value="/mod/resource/view.php?id=93304&amp;forceview=1" >Variables et fonctions statiques</option>
+                    <option value="/mod/resource/view.php?id=93310&amp;forceview=1" >Animal moyen</option>
+                    <option value="/mod/resource/view.php?id=93311&amp;forceview=1" >Compteur</option>
+                    <option value="/mod/resource/view.php?id=93312&amp;forceview=1" >Génération d'identificateurs</option>
+                    <option value="/mod/url/view.php?id=270571&amp;forceview=1" >Série de Lucas et Compteur (en ligne)</option>
+                    <option value="/mod/url/view.php?id=270572&amp;forceview=1" >Série de Lucas et Compteur (solution) (en ligne)</option>
+                    <option value="/mod/resource/view.php?id=93316&amp;forceview=1" >Puits</option>
+                    <option value="/mod/resource/view.php?id=93317&amp;forceview=1" >Fourmis</option>
+                    <option value="/mod/resource/view.php?id=93320&amp;forceview=1" >Gestion des exceptions (mise a jour 26 nov.)</option>
+                    <option value="/mod/resource/view.php?id=206432&amp;forceview=1" >Code cours 16 (téléchargement)</option>
+                    <option value="/mod/resource/view.php?id=93325&amp;forceview=1" >Exceptions standards</option>
+                    <option value="/mod/resource/view.php?id=93326&amp;forceview=1" >Hiérarchie d'exceptions</option>
+                    <option value="/mod/url/view.php?id=206662&amp;forceview=1" >Essaie encore (en ligne)</option>
+                    <option value="/mod/url/view.php?id=206664&amp;forceview=1" >Pointeur poisson (en ligne)</option>
+                    <option value="/mod/url/view.php?id=206666&amp;forceview=1" >Exceptions standards (en ligne)</option>
+                    <option value="/mod/resource/view.php?id=93337&amp;forceview=1" >Tuples</option>
+                    <option value="/mod/resource/view.php?id=93343&amp;forceview=1" >Équipes (tuples)</option>
+                    <option value="/mod/resource/view.php?id=93347&amp;forceview=1" >Retour de division</option>
+                    <option value="/mod/resource/view.php?id=93350&amp;forceview=1" >Vente de garage (tuples)</option>
+                    <option value="/mod/resource/view.php?id=93938&amp;forceview=1" >Conversion d'objet, explicit et mutable</option>
+                    <option value="/mod/resource/view.php?id=93357&amp;forceview=1" >Maximes (const_cast, mutable et explicit)</option>
+                    <option value="/mod/resource/view.php?id=93358&amp;forceview=1" >Vacanciers (static_, dynamic_ et reinterpret_cast)</option>
+                    <option value="/mod/resource/view.php?id=93936&amp;forceview=1" >Namespaces</option>
+                    <option value="/mod/resource/view.php?id=93373&amp;forceview=1" >namespace std</option>
+                    <option value="/mod/resource/view.php?id=93372&amp;forceview=1" >Maison</option>
+                    <option value="/mod/resource/view.php?id=93375&amp;forceview=1" >namespace std</option>
+                    <option value="/mod/resource/view.php?id=93376&amp;forceview=1" >Propres namespaces</option>
+                    <option value="/mod/folder/view.php?id=93855&amp;forceview=1" >Anciens Examens</option>
+                    <option value="/mod/resource/view.php?id=93844&amp;forceview=1" >Le Grand Simulateur de Hockey</option>
+                    <option value="/mod/page/view.php?id=93884&amp;forceview=1" >Questions des Anciens Examens</option>
+                    <option value="/mod/quiz/view.php?id=93840&amp;forceview=1" >Quiz : Révision</option>
+        </select>
+            <noscript>
+                <input type="submit" class="btn btn-secondary ml-1" value="Valider">
+            </noscript>
+    </form>
+</div>
+
+        </div>
+</div>
+    <div class="col-md-4">        <div class="float-right">
+                <a href="https://moodle.polymtl.ca/mod/resource/view.php?id=100375&forceview=1" id="next-activity-link" class="btn btn-link"  title="Fichiers TP3" >Fichiers TP3 &#x25BA;</a>
+
+        </div>
+</div>
+</div>
+</div>
+                    
+
+                </section>
+            </div>
+        </div>
+    </div>
+    <div
+    id="message-drawer-5e4728d4ceb1e5e4728d4c7bb615"
+    class="message-app drawer bg-light hidden"
+    aria-expanded="false"
+    aria-hidden="true"
+    data-region="message-drawer"
+    role="region"
+>
+    <div class="header-container position-relative" data-region="header-container">
+        <div class="hidden border-bottom px-2 py-3" aria-hidden="true" data-region="view-contacts">
+            <div class="d-flex align-items-center">
+                <div class="align-self-stretch">
+                    <a class="h-100 d-flex align-items-center mr-2" href="#" data-route-back role="button">
+                        <div class="icon-back-in-drawer">
+                            <span class="dir-rtl-hide"><i class="icon fa fa-chevron-left fa-fw " aria-hidden="true"  ></i></span>
+                            <span class="dir-ltr-hide"><i class="icon fa fa-chevron-right fa-fw " aria-hidden="true"  ></i></span>
+                        </div>
+                        <div class="icon-back-in-app">
+                            <span class="dir-rtl-hide"><i class="icon fa fa-times fa-fw " aria-hidden="true"  ></i></span>
+                        </div>                    </a>
+                </div>
+                <div>
+                    Contacts
+                </div>
+                <div class="ml-auto">
+                    <a href="#" data-route="view-search" role="button" aria-label="Recherche">
+                        <i class="icon fa fa-search fa-fw " aria-hidden="true"  ></i>
+                    </a>
+                </div>
+            </div>
+        </div>        
+        <div
+            class="hidden bg-white position-relative border-bottom px-2 py-2"
+            aria-hidden="true"
+            data-region="view-conversation"
+        >
+            <div class="hidden" data-region="header-content"></div>
+            <div class="hidden" data-region="header-edit-mode">
+                
+                <div class="d-flex p-2 align-items-center">
+                    Messages sélectionnés :
+                    <span class="ml-1" data-region="message-selected-court">1</span>
+                    <button type="button" class="ml-auto close" aria-label="Annuler la sélection de message"
+                        data-action="cancel-edit-mode">
+                            <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+            <div data-region="header-placeholder">
+                <div class="d-flex">
+                    <div
+                        class="ml-2 rounded-circle bg-pulse-grey align-self-center"
+                        style="height: 38px; width: 38px"
+                    >
+                    </div>
+                    <div class="ml-2 " style="flex: 1">
+                        <div
+                            class="mt-1 bg-pulse-grey w-75"
+                            style="height: 16px;"
+                        >
+                        </div>
+                    </div>
+                    <div
+                        class="ml-2 bg-pulse-grey align-self-center"
+                        style="height: 16px; width: 20px"
+                    >
+                    </div>
+                </div>
+            </div>
+            <div
+                class="hidden position-absolute"
+                data-region="confirm-dialogue-container"
+                style="top: 0; bottom: -1px; right: 0; left: 0; background: rgba(0,0,0,0.3);"
+            ></div>
+        </div>        <div class="border-bottom px-2 py-3" aria-hidden="false"  data-region="view-overview">
+            <div class="d-flex align-items-center">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text pr-0 bg-white">
+                            <i class="icon fa fa-search fa-fw " aria-hidden="true"  ></i>
+                        </span>
+                    </div>
+                    <input
+                        type="text"
+                        class="form-control border-left-0"
+                        placeholder="Recherche"
+                        aria-label="Recherche"
+                        data-region="view-overview-search-input"
+                    >
+                </div>
+                <div class="ml-2">
+                    <a
+                        href="#"
+                        data-route="view-settings"
+                        data-route-param="81604"
+                        aria-label="Réglages"
+                        role="button"
+                    >
+                        <i class="icon fa fa-cog fa-fw " aria-hidden="true"  ></i>
+                    </a>
+                </div>
+            </div>
+            <div class="text-right mt-3">
+                <a href="#" data-route="view-contacts" role="button">
+                    <i class="icon fa fa-user fa-fw " aria-hidden="true"  ></i>
+                    Contacts
+                    <span class="badge bg-primary ml-2 hidden"
+                    data-region="contact-request-count"
+                    aria-label="Il y a 0 demandes de contact en attente">
+                        0
+                    </span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="hidden border-bottom px-2 py-3 view-search"  aria-hidden="true" data-region="view-search">
+            <div class="d-flex align-items-center">
+                <a
+                    class="mr-2 align-self-stretch d-flex align-items-center"
+                    href="#"
+                    data-route-back
+                    data-action="cancel-search"
+                    role="button"
+                >
+                    <div class="icon-back-in-drawer">
+                        <span class="dir-rtl-hide"><i class="icon fa fa-chevron-left fa-fw " aria-hidden="true"  ></i></span>
+                        <span class="dir-ltr-hide"><i class="icon fa fa-chevron-right fa-fw " aria-hidden="true"  ></i></span>
+                    </div>
+                    <div class="icon-back-in-app">
+                        <span class="dir-rtl-hide"><i class="icon fa fa-times fa-fw " aria-hidden="true"  ></i></span>
+                    </div>                </a>
+                <div class="input-group">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Recherche"
+                        aria-label="Recherche"
+                        data-region="search-input"
+                    >
+                    <div class="input-group-append">
+                        <button
+                            class="btn btn-outline-secondary"
+                            type="button"
+                            data-action="search"
+                            aria-label="Recherche"
+                        >
+                            <span data-region="search-icon-container">
+                                <i class="icon fa fa-search fa-fw " aria-hidden="true"  ></i>
+                            </span>
+                            <span class="hidden" data-region="loading-icon-container">
+                                <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <div class="hidden border-bottom px-2 py-3" aria-hidden="true" data-region="view-settings">
+            <div class="d-flex align-items-center">
+                <div class="align-self-stretch" >
+                    <a class="h-100 d-flex mr-2 align-items-center" href="#" data-route-back role="button">
+                        <div class="icon-back-in-drawer">
+                            <span class="dir-rtl-hide"><i class="icon fa fa-chevron-left fa-fw " aria-hidden="true"  ></i></span>
+                            <span class="dir-ltr-hide"><i class="icon fa fa-chevron-right fa-fw " aria-hidden="true"  ></i></span>
+                        </div>
+                        <div class="icon-back-in-app">
+                            <span class="dir-rtl-hide"><i class="icon fa fa-times fa-fw " aria-hidden="true"  ></i></span>
+                        </div>                    </a>
+                </div>
+                <div>
+                    Paramètres
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="body-container position-relative" data-region="body-container">
+        
+        <div
+            class="hidden"
+            data-region="view-contact"
+            aria-hidden="true"
+        >
+            <div class="p-2 pt-3" data-region="content-container"></div>
+        </div>        <div class="hidden h-100" data-region="view-contacts" aria-hidden="true" data-user-id="81604">
+            <div class="d-flex flex-column h-100">
+                <div class="p-3 border-bottom">
+                    <ul class="nav nav-pills nav-fill" role="tablist">
+                        <li class="nav-item">
+                            <a
+                                id="contacts-tab-5e4728d4ceb1e5e4728d4c7bb615"
+                                class="nav-link active"
+                                href="#contacts-tab-panel-5e4728d4ceb1e5e4728d4c7bb615"
+                                data-toggle="tab"
+                                data-action="show-contacts-section"
+                                role="tab"
+                                aria-controls="contacts-tab-panel-5e4728d4ceb1e5e4728d4c7bb615"
+                                aria-selected="true"
+                            >
+                                Contacts
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                id="requests-tab-5e4728d4ceb1e5e4728d4c7bb615"
+                                class="nav-link"
+                                href="#requests-tab-panel-5e4728d4ceb1e5e4728d4c7bb615"
+                                data-toggle="tab"
+                                data-action="show-requests-section"
+                                role="tab"
+                                aria-controls="requests-tab-panel-5e4728d4ceb1e5e4728d4c7bb615"
+                                aria-selected="false"
+                            >
+                                Demandes
+                                <span class="badge bg-primary ml-2 hidden"
+                                data-region="contact-request-count"
+                                aria-label="Il y a 0 demandes de contact en attente">
+                                    0
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content d-flex flex-column h-100">
+                            <div
+            class="tab-pane fade show active h-100 lazy-load-list"
+            aria-live="polite"
+            data-region="lazy-load-list"
+            data-user-id="81604"
+                                id="contacts-tab-panel-5e4728d4ceb1e5e4728d4c7bb615"
+                    data-section="contacts"
+                    role="tabpanel"
+                    aria-labelledby="contacts-tab-5e4728d4ceb1e5e4728d4c7bb615"
+
+        >
+            
+            <div class="hidden text-center p-2" data-region="empty-message-container">
+                Aucun contact
+            </div>
+            <div class="hidden list-group" data-region="content-container">
+                
+            </div>
+            <div class="list-group" data-region="placeholder-container">
+                
+            </div>
+            <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container" >
+                <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+            </div>
+        </div>
+        
+                            <div
+            class="tab-pane fade h-100 lazy-load-list"
+            aria-live="polite"
+            data-region="lazy-load-list"
+            data-user-id="81604"
+                                id="requests-tab-panel-5e4728d4ceb1e5e4728d4c7bb615"
+                    data-section="requests"
+                    role="tabpanel"
+                    aria-labelledby="requests-tab-5e4728d4ceb1e5e4728d4c7bb615"
+
+        >
+            
+            <div class="hidden text-center p-2" data-region="empty-message-container">
+                Aucune demande de contact
+            </div>
+            <div class="hidden list-group" data-region="content-container">
+                
+            </div>
+            <div class="list-group" data-region="placeholder-container">
+                
+            </div>
+            <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container" >
+                <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+            </div>
+        </div>
+                </div>
+            </div>
+        </div>        
+        <div
+            class="view-conversation hidden h-100"
+            aria-hidden="true"
+            data-region="view-conversation"
+            data-user-id="81604"
+            data-midnight="1581656400"
+            data-message-poll-min="10"
+            data-message-poll-max="120"
+            data-message-poll-after-max="300"
+            style="overflow-y: auto; overflow-x: hidden"
+        >
+            <div class="position-relative h-100" data-region="content-container" style="overflow-y: auto; overflow-x: hidden">
+                <div class="content-message-container hidden h-100 px-2 pt-0" data-region="content-message-container" role="log" style="overflow-y: auto; overflow-x: hidden">
+                    <div class="py-3 bg-light sticky-top z-index-1 border-bottom text-center hidden" data-region="contact-request-sent-message-container">
+                        <p class="m-0">Demande de contact envoyée</p>
+                        <p class="font-italic font-weight-light" data-region="text"></p>
+                    </div>
+                    <div class="p-3 bg-light text-center hidden" data-region="self-conversation-message-container">
+                        <p class="m-0">Espace personnel</p>
+                        <p class="font-italic font-weight-light" data-region="text">Enregistrer des brouillons, liens, note, etc. pour un usage ultérieur.</p>
+                   </div>
+                    <div class="hidden text-center p-3" data-region="more-messages-loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+</div>
+                </div>
+                <div class="p-4 w-100 h-100 hidden position-absolute" data-region="confirm-dialogue-container" style="top: 0; background: rgba(0,0,0,0.3);">
+                    
+                    <div class="p-3 bg-white" data-region="confirm-dialogue" role="alert">
+                        <h3 class="h6 hidden" data-region="dialogue-header"></h3>
+                        <p class="text-muted" data-region="dialogue-text"></p>
+                        <div class="mb-2 hidden" data-region="delete-messages-for-all-users-toggle-container">
+                            <label class="custom-control-label ml-2 text-muted">
+                                <input type="checkbox" data-region="delete-messages-for-all-users-toggle">
+                                Supprimer pour moi et et pour tous les autres
+                            </label>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-block">
+                            <span data-region="dialogue-button-text">Bloc</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-unblock">
+                            <span data-region="dialogue-button-text">Débloquer</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-remove-contact">
+                            <span data-region="dialogue-button-text">Supprimer</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-add-contact">
+                            <span data-region="dialogue-button-text">Ajouter</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-delete-selected-messages">
+                            <span data-region="dialogue-button-text">Supprimer</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-delete-conversation">
+                            <span data-region="dialogue-button-text">Supprimer</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="request-add-contact">
+                            <span data-region="dialogue-button-text">Envoyer une demande de contact</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="accept-contact-request">
+                            <span data-region="dialogue-button-text">Accepter et ajouter aux contacts</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-block hidden" data-action="decline-contact-request">
+                            <span data-region="dialogue-button-text">Décliner</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-block" data-action="cancel-confirm">Annuler</button>
+                    </div>
+                </div>
+                <div class="px-2 pb-2 pt-0" data-region="content-placeholder">
+                    <div class="h-100 d-flex flex-column">
+                        <div
+                            class="px-2 pb-2 pt-0 bg-light h-100"
+                            style="overflow-y: auto"
+                        >
+                            <div class="mt-4">
+                                <div class="mb-4">
+                                    <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                            </div>                            <div class="mt-4">
+                                <div class="mb-4">
+                                    <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                            </div>                            <div class="mt-4">
+                                <div class="mb-4">
+                                    <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                            </div>                            <div class="mt-4">
+                                <div class="mb-4">
+                                    <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                            </div>                            <div class="mt-4">
+                                <div class="mb-4">
+                                    <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                            </div>                        </div>
+                    </div>                </div>
+            </div>
+        </div>
+        
+        <div
+            class="hidden"
+            aria-hidden="true"
+            data-region="view-group-info"
+        >
+            <div
+                class="pt-3 h-100 d-flex flex-column"
+                data-region="group-info-content-container"
+                style="overflow-y: auto"
+            ></div>
+        </div>        <div class="h-100 view-overview-body" aria-hidden="false" data-region="view-overview"  data-user-id="81604">
+            <div id="message-drawer-view-overview-container-5e4728d4ceb1e5e4728d4c7bb615" class="d-flex flex-column h-100" style="overflow-y: auto">
+                    
+                    
+                    <div
+                        class="section border-0 card"
+                        data-region="view-overview-favourites"
+                    >
+                        <div id="view-overview-favourites-toggle" class="card-header p-0" data-region="toggle">
+                            <button
+                                class="btn btn-link w-100 text-left p-2 d-flex align-items-center overview-section-toggle collapsed"
+                                data-toggle="collapse"
+                                data-target="#view-overview-favourites-target-5e4728d4ceb1e5e4728d4c7bb615"
+                                aria-expanded="false"
+                                aria-controls="view-overview-favourites-target-5e4728d4ceb1e5e4728d4c7bb615"
+                            >
+                                <span class="collapsed-icon-container">
+                                    <i class="icon fa fa-caret-right fa-fw " aria-hidden="true"  ></i>
+                                </span>
+                                <span class="expanded-icon-container">
+                                    <i class="icon fa fa-caret-down fa-fw " aria-hidden="true"  ></i>
+                                </span>
+                                <span class="font-weight-bold">Favori</span>
+                                <small class="hidden ml-1" data-region="section-total-count-container"
+                                aria-label=" conversations">
+                                    (<span data-region="section-total-count"></span>)
+                                </small>
+                                <span class="hidden ml-2" data-region="loading-icon-container">
+                                    <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+                                </span>
+                                <span class="hidden badge badge-pill badge-primary ml-auto bg-primary"
+                                data-region="section-unread-count"
+                                >
+                                    
+                                </span>
+                            </button>
+                        </div>
+                                            <div
+                        class="collapse border-bottom  lazy-load-list"
+                        aria-live="polite"
+                        data-region="lazy-load-list"
+                        data-user-id="81604"
+                                    id="view-overview-favourites-target-5e4728d4ceb1e5e4728d4c7bb615"
+            aria-labelledby="view-overview-favourites-toggle"
+            data-parent="#message-drawer-view-overview-container-5e4728d4ceb1e5e4728d4c7bb615"
+
+                    >
+                        
+                        <div class="hidden text-center p-2" data-region="empty-message-container">
+                                    <p class="text-muted mt-2">Aucune conversation favorite</p>
+
+                        </div>
+                        <div class="hidden list-group" data-region="content-container">
+                            
+                        </div>
+                        <div class="list-group" data-region="placeholder-container">
+                                    <div class="text-center py-2"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+</div>
+
+                        </div>
+                        <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container" >
+                            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    
+                    <div
+                        class="section border-0 card"
+                        data-region="view-overview-group-messages"
+                    >
+                        <div id="view-overview-group-messages-toggle" class="card-header p-0" data-region="toggle">
+                            <button
+                                class="btn btn-link w-100 text-left p-2 d-flex align-items-center overview-section-toggle collapsed"
+                                data-toggle="collapse"
+                                data-target="#view-overview-group-messages-target-5e4728d4ceb1e5e4728d4c7bb615"
+                                aria-expanded="false"
+                                aria-controls="view-overview-group-messages-target-5e4728d4ceb1e5e4728d4c7bb615"
+                            >
+                                <span class="collapsed-icon-container">
+                                    <i class="icon fa fa-caret-right fa-fw " aria-hidden="true"  ></i>
+                                </span>
+                                <span class="expanded-icon-container">
+                                    <i class="icon fa fa-caret-down fa-fw " aria-hidden="true"  ></i>
+                                </span>
+                                <span class="font-weight-bold">Groupe</span>
+                                <small class="hidden ml-1" data-region="section-total-count-container"
+                                aria-label=" conversations">
+                                    (<span data-region="section-total-count"></span>)
+                                </small>
+                                <span class="hidden ml-2" data-region="loading-icon-container">
+                                    <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+                                </span>
+                                <span class="hidden badge badge-pill badge-primary ml-auto bg-primary"
+                                data-region="section-unread-count"
+                                >
+                                    
+                                </span>
+                            </button>
+                        </div>
+                                            <div
+                        class="collapse border-bottom  lazy-load-list"
+                        aria-live="polite"
+                        data-region="lazy-load-list"
+                        data-user-id="81604"
+                                    id="view-overview-group-messages-target-5e4728d4ceb1e5e4728d4c7bb615"
+            aria-labelledby="view-overview-group-messages-toggle"
+            data-parent="#message-drawer-view-overview-container-5e4728d4ceb1e5e4728d4c7bb615"
+
+                    >
+                        
+                        <div class="hidden text-center p-2" data-region="empty-message-container">
+                                    <p class="text-muted mt-2">Pas de conversation de groupe</p>
+
+                        </div>
+                        <div class="hidden list-group" data-region="content-container">
+                            
+                        </div>
+                        <div class="list-group" data-region="placeholder-container">
+                                    <div class="text-center py-2"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+</div>
+
+                        </div>
+                        <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container" >
+                            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    
+                    <div
+                        class="section border-0 card"
+                        data-region="view-overview-messages"
+                    >
+                        <div id="view-overview-messages-toggle" class="card-header p-0" data-region="toggle">
+                            <button
+                                class="btn btn-link w-100 text-left p-2 d-flex align-items-center overview-section-toggle collapsed"
+                                data-toggle="collapse"
+                                data-target="#view-overview-messages-target-5e4728d4ceb1e5e4728d4c7bb615"
+                                aria-expanded="false"
+                                aria-controls="view-overview-messages-target-5e4728d4ceb1e5e4728d4c7bb615"
+                            >
+                                <span class="collapsed-icon-container">
+                                    <i class="icon fa fa-caret-right fa-fw " aria-hidden="true"  ></i>
+                                </span>
+                                <span class="expanded-icon-container">
+                                    <i class="icon fa fa-caret-down fa-fw " aria-hidden="true"  ></i>
+                                </span>
+                                <span class="font-weight-bold">Privée</span>
+                                <small class="hidden ml-1" data-region="section-total-count-container"
+                                aria-label=" conversations">
+                                    (<span data-region="section-total-count"></span>)
+                                </small>
+                                <span class="hidden ml-2" data-region="loading-icon-container">
+                                    <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+                                </span>
+                                <span class="hidden badge badge-pill badge-primary ml-auto bg-primary"
+                                data-region="section-unread-count"
+                                >
+                                    
+                                </span>
+                            </button>
+                        </div>
+                                            <div
+                        class="collapse border-bottom  lazy-load-list"
+                        aria-live="polite"
+                        data-region="lazy-load-list"
+                        data-user-id="81604"
+                                    id="view-overview-messages-target-5e4728d4ceb1e5e4728d4c7bb615"
+            aria-labelledby="view-overview-messages-toggle"
+            data-parent="#message-drawer-view-overview-container-5e4728d4ceb1e5e4728d4c7bb615"
+
+                    >
+                        
+                        <div class="hidden text-center p-2" data-region="empty-message-container">
+                                    <p class="text-muted mt-2">Pas de conversation privée</p>
+
+                        </div>
+                        <div class="hidden list-group" data-region="content-container">
+                            
+                        </div>
+                        <div class="list-group" data-region="placeholder-container">
+                                    <div class="text-center py-2"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+</div>
+
+                        </div>
+                        <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container" >
+                            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+        
+        <div
+            data-region="view-search"
+            aria-hidden="true"
+            class="h-100 hidden"
+            data-user-id="81604"
+            data-users-offset="0"
+            data-messages-offset="0"
+            style="overflow-y: auto"
+            
+        >
+            <div class="hidden" data-region="search-results-container" style="overflow-y: auto">
+                
+                <div class="d-flex flex-column">
+                    <div class="mb-3 bg-white" data-region="all-contacts-container">
+                        <div data-region="contacts-container"  class="pt-2">
+                            <h4 class="h6 px-2">Contacts</h4>
+                            <div class="list-group" data-region="list"></div>
+                        </div>
+                        <div data-region="non-contacts-container" class="pt-2 border-top">
+                            <h4 class="h6 px-2">Non contact</h4>
+                            <div class="list-group" data-region="list"></div>
+                        </div>
+                        <div class="text-right">
+                            <button class="btn btn-link text-primary" data-action="load-more-users">
+                                <span data-region="button-text">Charger plus</span>
+                                <span data-region="loading-icon-container" class="hidden"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-white" data-region="messages-container">
+                        <h4 class="h6 px-2 pt-2">Messages personnels</h4>
+                        <div class="list-group" data-region="list"></div>
+                        <div class="text-right">
+                            <button class="btn btn-link text-primary" data-action="load-more-messages">
+                                <span data-region="button-text">Charger plus</span>
+                                <span data-region="loading-icon-container" class="hidden"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="hidden p-3 text-center" data-region="no-results-container">Aucun résultat</p>
+                </div>            </div>
+            <div class="hidden" data-region="loading-placeholder">
+                <div class="text-center pt-3 icon-size-4"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+</div>
+            </div>
+            <div class="p-3 text-center" data-region="empty-message-container">
+                <p>Rechercher des personnes et des messages</p>
+            </div>
+        </div>        
+        <div class="h-100 hidden bg-white" aria-hidden="true" data-region="view-settings">
+            <div class="hidden" data-region="content-container">
+                
+                <div data-region="settings" class="p-3">
+                    <h3 class="h6 font-weight-bold">Confidentialité</h3>
+                    <p>Vous pouvez choisir qui peut vous envoyer un message personnel</p>
+                    <div data-preference="blocknoncontacts" class="mb-3">
+                            <div class="custom-control custom-radio mb-2">
+                                <input
+                                    type="radio"
+                                    name="message_blocknoncontacts"
+                                    class="custom-control-input"
+                                    id="block-noncontacts-5e4728d4ceb1e5e4728d4c7bb615-1"
+                                    value="1"
+                                >
+                                <label class="custom-control-label ml-2" for="block-noncontacts-5e4728d4ceb1e5e4728d4c7bb615-1">
+                                    Mes contacts seulement
+                                </label>
+                            </div>
+                            <div class="custom-control custom-radio mb-2">
+                                <input
+                                    type="radio"
+                                    name="message_blocknoncontacts"
+                                    class="custom-control-input"
+                                    id="block-noncontacts-5e4728d4ceb1e5e4728d4c7bb615-0"
+                                    value="0"
+                                >
+                                <label class="custom-control-label ml-2" for="block-noncontacts-5e4728d4ceb1e5e4728d4c7bb615-0">
+                                    Mes contacts et tout le monde dans mes cours
+                                </label>
+                            </div>
+                    </div>
+                
+                    <div class="hidden" data-region="notification-preference-container">
+                        <h3 class="mb-2 mt-4 h6 font-weight-bold">Préférences de notification</h3>
+                    </div>
+                
+                    <h3 class="mb-2 mt-4 h6 font-weight-bold">Général</h3>
+                    <div data-preference="entertosend">
+                        <span class="switch">
+                            <input type="checkbox"
+                                id="enter-to-send-5e4728d4ceb1e5e4728d4c7bb615"
+                                
+                            >
+                            <label for="enter-to-send-5e4728d4ceb1e5e4728d4c7bb615">
+                                Taper entrée pour envoyer
+                            </label>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div data-region="placeholder-container">
+                
+                <div class="d-flex flex-column p-3">
+                    <div class="w-25 bg-pulse-grey h6" style="height: 18px"></div>
+                    <div class="w-75 bg-pulse-grey mb-4" style="height: 18px"></div>
+                    <div class="mb-3">
+                        <div class="w-100 d-flex mb-3">
+                            <div class="bg-pulse-grey rounded-circle" style="width: 18px; height: 18px"></div>
+                            <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                        </div>
+                        <div class="w-100 d-flex mb-3">
+                            <div class="bg-pulse-grey rounded-circle" style="width: 18px; height: 18px"></div>
+                            <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                        </div>
+                        <div class="w-100 d-flex mb-3">
+                            <div class="bg-pulse-grey rounded-circle" style="width: 18px; height: 18px"></div>
+                            <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                        </div>
+                    </div>
+                    <div class="w-50 bg-pulse-grey h6 mb-3 mt-2" style="height: 18px"></div>
+                    <div class="mb-4">
+                        <div class="w-100 d-flex mb-2 align-items-center">
+                            <div class="bg-pulse-grey w-25" style="width: 18px; height: 27px"></div>
+                            <div class="bg-pulse-grey w-25 ml-2" style="height: 18px"></div>
+                        </div>
+                        <div class="w-100 d-flex mb-2 align-items-center">
+                            <div class="bg-pulse-grey w-25" style="width: 18px; height: 27px"></div>
+                            <div class="bg-pulse-grey w-25 ml-2" style="height: 18px"></div>
+                        </div>
+                    </div>
+                    <div class="w-25 bg-pulse-grey h6 mb-3 mt-2" style="height: 18px"></div>
+                    <div class="mb-3">
+                        <div class="w-100 d-flex mb-2 align-items-center">
+                            <div class="bg-pulse-grey w-25" style="width: 18px; height: 27px"></div>
+                            <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                        </div>
+                    </div>
+                </div>            </div>
+        </div>    </div>
+    <div class="footer-container position-relative" data-region="footer-container">
+        
+        <div
+            class="hidden border-top bg-white position-relative"
+            aria-hidden="true"
+            data-region="view-conversation"
+            data-enter-to-send="0"
+        >
+            <div class="hidden p-2" data-region="content-messages-footer-container">
+                
+                <div class="d-flex mt-1">
+                    <textarea
+                        dir="auto"
+                        data-region="send-message-txt"
+                        class="form-control bg-light"
+                        rows="3"
+                        data-auto-rows
+                        data-min-rows="3"
+                        data-max-rows="5"
+                        role="textbox"
+                        aria-label="Écrire un message"
+                        placeholder="Écrire un message"
+                        style="resize: none"
+                    ></textarea>
+                    <button
+                        class="btn btn-link btn-icon icon-size-3 ml-1 mt-auto"
+                        aria-label="Envoyer message personnel"
+                        data-action="send-message"
+                    >
+                        <span data-region="send-icon-container"><i class="icon fa fa-paper-plane fa-fw " aria-hidden="true"  ></i></span>
+                        <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hidden p-2" data-region="content-messages-footer-edit-mode-container">
+                
+                <div class="d-flex p-3 justify-content-end">
+                    <button
+                        class="btn btn-link btn-icon my-1 icon-size-4"
+                        data-action="delete-selected-messages"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Supprimer les messages sélectionnés"
+                    >
+                        <span data-region="icon-container"><i class="icon fa fa-trash fa-fw " aria-hidden="true"  ></i></span>
+                        <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                        <span class="sr-only">Supprimer les messages sélectionnés</span>
+                    </button>
+                </div>            </div>
+            <div class="hidden bg-secondary p-3" data-region="content-messages-footer-require-contact-container">
+                
+                <div class="p-3 bg-white">
+                    <p data-region="title"></p>
+                    <p class="text-muted" data-region="text"></p>
+                    <button type="button" class="btn btn-primary btn-block" data-action="request-add-contact">
+                        <span data-region="dialogue-button-text">Envoyer une demande de contact</span>
+                        <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hidden bg-secondary p-3" data-region="content-messages-footer-require-unblock-container">
+                
+                <div class="p-3 bg-white">
+                    <p class="text-muted" data-region="text">Vous avez bloqué cet utilisateur.</p>
+                    <button type="button" class="btn btn-primary btn-block" data-action="request-unblock">
+                        <span data-region="dialogue-button-text">Débloquer l'utilisateur</span>
+                        <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hidden bg-secondary p-3" data-region="content-messages-footer-unable-to-message">
+                
+                <div class="p-3 bg-white">
+                    <p class="text-muted" data-region="text">Vous ne pouvez pas envoyer un message à cet utilisateur</p>
+                </div>
+            </div>
+            <div class="p-2" data-region="placeholder-container">
+                <div class="d-flex">
+                    <div class="bg-pulse-grey w-100" style="height: 80px"></div>
+                    <div class="mx-2 mb-2 align-self-end bg-pulse-grey" style="height: 20px; width: 20px"></div>
+                </div>            </div>
+            <div
+                class="hidden position-absolute"
+                data-region="confirm-dialogue-container"
+                style="top: -1px; bottom: 0; right: 0; left: 0; background: rgba(0,0,0,0.3);"
+            ></div>
+        </div>            <div data-region="view-overview" class="text-center">
+                <a href="https://moodle.polymtl.ca/message/index.php">
+                    Tout afficher
+                </a>
+            </div>
+    </div>
+</div>
+    <div id="nav-drawer" data-region="drawer" class="d-print-none moodle-has-zindex closed" aria-hidden="true" tabindex="-1">
+        <nav class="list-group" aria-label="INF1010 - Programmation orientée objet">
+            <a class="list-group-item list-group-item-action " href="https://moodle.polymtl.ca/course/view.php?id=29" data-key="coursehome" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="60" data-nodetype="0" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" >
+                <div class="ml-0">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"  ></i>
+                        </span>
+                        <span class="media-body ">INF1010 - Programmation orientée objet</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle.polymtl.ca/user/index.php?id=29" data-key="participants" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="90" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="29">
+                <div class="ml-0">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-users fa-fw " aria-hidden="true"  ></i>
+                        </span>
+                        <span class="media-body ">Participants</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle.polymtl.ca/grade/report/index.php?id=29" data-key="grades" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="70" data-nodetype="0" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="29">
+                <div class="ml-0">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-table fa-fw " aria-hidden="true"  ></i>
+                        </span>
+                        <span class="media-body ">Notes</span>
+                    </div>
+                </div>
+            </a>
+        </nav>
+        <nav class="list-group mt-1" aria-label="Site">
+            <a class="list-group-item list-group-item-action " href="https://moodle.polymtl.ca/my/" data-key="myhome" data-isexpandable="0" data-indent="0" data-showdivider="1" data-type="1" data-nodetype="1" data-collapse="0" data-forceopen="1" data-isactive="0" data-hidden="0" data-preceedwithhr="0" >
+                <div class="ml-0">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-tachometer fa-fw " aria-hidden="true"  ></i>
+                        </span>
+                        <span class="media-body ">Tableau de bord</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle.polymtl.ca/?redirect=0" data-key="home" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="70" data-nodetype="0" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="myhome">
+                <div class="ml-0">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-home fa-fw " aria-hidden="true"  ></i>
+                        </span>
+                        <span class="media-body ">Accueil du site</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle.polymtl.ca/calendar/view.php?view=month&amp;course=29" data-key="calendar" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="60" data-nodetype="0" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="1">
+                <div class="ml-0">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-calendar fa-fw " aria-hidden="true"  ></i>
+                        </span>
+                        <span class="media-body ">Calendrier</span>
+                    </div>
+                </div>
+            </a>
+            <div class="list-group-item" data-key="mycourses" data-isexpandable="1" data-indent="0" data-showdivider="0" data-type="0" data-nodetype="1" data-collapse="0" data-forceopen="1" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="myhome">
+                <div class="ml-0">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"  ></i>
+                        </span>
+                        <span class="media-body">Mes cours</span>
+                    </div>
+                </div>
+            </div>
+            <a class="list-group-item list-group-item-action " href="https://moodle.polymtl.ca/course/view.php?id=29" data-key="29" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="1" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                <div class="ml-1">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"  ></i>
+                        </span>
+                        <span class="media-body ">INF1010 - Programmation orientée objet</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle.polymtl.ca/course/view.php?id=1007" data-key="1007" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                <div class="ml-1">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"  ></i>
+                        </span>
+                        <span class="media-body ">INF1500 - Logique des systèmes numériques</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle.polymtl.ca/course/view.php?id=931" data-key="931" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                <div class="ml-1">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"  ></i>
+                        </span>
+                        <span class="media-body ">LOG1000 - Ingénierie logicielle</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle.polymtl.ca/course/view.php?id=919" data-key="919" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                <div class="ml-1">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"  ></i>
+                        </span>
+                        <span class="media-body ">LOG3005 - Communication écrite et orale</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle.polymtl.ca/course/view.php?id=1804" data-key="1804" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                <div class="ml-1">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"  ></i>
+                        </span>
+                        <span class="media-body ">MTH1007 - Algèbre linéaire pour ingénieurs</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle.polymtl.ca/course/view.php?id=607" data-key="607" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                <div class="ml-1">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"  ></i>
+                        </span>
+                        <span class="media-body ">MTH1102 - Calcul II</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle.polymtl.ca/course/view.php?id=1813" data-key="1813" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                <div class="ml-1">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"  ></i>
+                        </span>
+                        <span class="media-body ">MTH3400 - Analyse mathématique pour ingénieurs</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle.polymtl.ca/course/view.php?id=2091" data-key="2091" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                <div class="ml-1">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"  ></i>
+                        </span>
+                        <span class="media-body ">Code de conduite – Baccalauréat – GO-Poly</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle.polymtl.ca/course/view.php?id=2198" data-key="2198" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                <div class="ml-1">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"  ></i>
+                        </span>
+                        <span class="media-body ">Contrer les violences à caractère sexuel</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle.polymtl.ca/course/view.php?id=2229" data-key="2229" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                <div class="ml-1">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"  ></i>
+                        </span>
+                        <span class="media-body ">Counter Sexual Violence</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle.polymtl.ca/my/" data-key="courseindexpage" data-isexpandable="0" data-indent="1" data-showdivider="0" data-type="60" data-nodetype="0" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                <div class="ml-1">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-fw fa-fw " aria-hidden="true"  ></i>
+                        </span>
+                        <span class="media-body ">Plus…</span>
+                    </div>
+                </div>
+            </a>
+        </nav>
+    </div>
+    <footer id="page-footer" class="py-3 bg-dark text-light">
+        <div class="container">
+            <div id="course-footer"></div>
+    
+    
+            <div class="logininfo">Connecté sous le nom « <a href="https://moodle.polymtl.ca/user/profile.php?id=81604" title="Consulter le profil">Samuel Lavallée</a> » (<a href="https://moodle.polymtl.ca/login/logout.php?sesskey=8TX2wyjnzX">Déconnexion</a>)</div>
+            <div class="tool_usertours-resettourcontainer"></div>
+            <div class="homelink"><a href="https://moodle.polymtl.ca/course/view.php?id=29">INF1010</a></div>
+            <nav class="nav navbar-nav d-md-none" aria-label="Menu personnalisé">
+                    <ul class="list-unstyled pt-3">
+                                        <li>Cours</li>
+                                    <li>
+                                        <ul class="list-unstyled ml-3">
+                                                            <li><a href="https://moodle.polymtl.ca/my" title="Mes cours">Mes cours</a></li>
+                                                            <li><a href="https://moodle.polymtl.ca/course/index.php" title="Liste complète de cours">Liste complète de cours</a></li>
+                                        </ul>
+                                    </li>
+                                        <li>Aide</li>
+                                    <li>
+                                        <ul class="list-unstyled ml-3">
+                                                            <li><a href="https://moodle.polymtl.ca/pluginfile.php/226238/mod_resource/content/22/faq_etud.html" target="_blank" title="FAQ pour ÉTUDIANTS">FAQ pour ÉTUDIANTS</a></li>
+                                                            <li><a href="https://moodle.polymtl.ca/pluginfile.php/226239/mod_resource/content/44/faq.html" target="_blank" title="FAQ pour ENSEIGNANTS">FAQ pour ENSEIGNANTS</a></li>
+                                                            <li><a href="https://moodle.polymtl.ca/course/view.php?name=SOUTIEN" title="Site de soutien pour éditeurs">Site de soutien pour éditeurs</a></li>
+                                        </ul>
+                                    </li>
+                                        <li>Liens utiles</li>
+                                    <li>
+                                        <ul class="list-unstyled ml-3">
+                                                            <li><a href="https://polyfolio.polymtl.ca/" target="_blank" title="Polyfolio">Polyfolio</a></li>
+                                                            <li><a href="https://dossieretudiant.polymtl.ca/" target="_blank" title="Dossier étudiant">Dossier étudiant</a></li>
+                                                            <li><a href="https://www.polymtl.ca/etudes/programmes/qualites-developper-pour-les-etudiants-en-ingenierie" target="_blank" title="Les 12 qualités requises en génie">Les 12 qualités requises en génie</a></li>
+                                                            <li><a href="http://www.polymtl.ca/etudes/cours/index.php" target="_blank" title="Répertoire des cours">Répertoire des cours</a></li>
+                                                            <li><a href="http://www.polymtl.ca/biblio/" target="_blank" title="Bibliothèque">Bibliothèque</a></li>
+                                                            <li><a href="http://www.imp.polymtl.ca/horde-3.0.5/imp/login.php" target="_blank" title="Courriel IMP">Courriel IMP</a></li>
+                                        </ul>
+                                    </li>
+                    </ul>
+            </nav>
+            <a href="https://download.moodle.org/mobile?version=2019052002.08&amp;lang=fr&amp;iosappid=633359593&amp;androidappid=com.moodle.moodlemobile">Obtenir l'app mobile</a>
+            <script type="text/javascript">
+//<![CDATA[
+var require = {
+    baseUrl : 'https://moodle.polymtl.ca/lib/requirejs.php/1571144937/',
+    // We only support AMD modules with an explicit define() statement.
+    enforceDefine: true,
+    skipDataMain: true,
+    waitSeconds : 0,
+
+    paths: {
+        jquery: 'https://moodle.polymtl.ca/lib/javascript.php/1571144937/lib/jquery/jquery-3.2.1.min',
+        jqueryui: 'https://moodle.polymtl.ca/lib/javascript.php/1571144937/lib/jquery/ui-1.12.1/jquery-ui.min',
+        jqueryprivate: 'https://moodle.polymtl.ca/lib/javascript.php/1571144937/lib/requirejs/jquery-private'
+    },
+
+    // Custom jquery config map.
+    map: {
+      // '*' means all modules will get 'jqueryprivate'
+      // for their 'jquery' dependency.
+      '*': { jquery: 'jqueryprivate' },
+      // Stub module for 'process'. This is a workaround for a bug in MathJax (see MDL-60458).
+      '*': { process: 'core/first' },
+
+      // 'jquery-private' wants the real jQuery module
+      // though. If this line was not here, there would
+      // be an unresolvable cyclic dependency.
+      jqueryprivate: { jquery: 'jquery' }
+    }
+};
+
+//]]>
+</script>
+<script type="text/javascript" src="https://moodle.polymtl.ca/lib/javascript.php/1571144937/lib/requirejs/require.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+M.util.js_pending("core/first");require(['core/first'], function() {
+;
+require(["media_videojs/loader"], function(loader) {
+    loader.setUp(function(videojs) {
+        videojs.options.flash.swf = "https://moodle.polymtl.ca/media/player/videojs/videojs/video-js.swf";
+videojs.addLanguage("fr",{
+ "Audio Player": "Lecteur audio",
+ "Video Player": "Lecteur vidéo",
+ "Play": "Lecture",
+ "Pause": "Pause",
+ "Replay": "Revoir",
+ "Current Time": "Temps actuel",
+ "Duration Time": "Durée",
+ "Remaining Time": "Temps restant",
+ "Stream Type": "Type de flux",
+ "LIVE": "EN DIRECT",
+ "Loaded": "Chargé",
+ "Progress": "Progression",
+ "Progress Bar": "Barre de progression",
+ "progress bar timing: currentTime={1} duration={2}": "{1} de {2}",
+ "Fullscreen": "Plein écran",
+ "Non-Fullscreen": "Fenêtré",
+ "Mute": "Sourdine",
+ "Unmute": "Son activé",
+ "Playback Rate": "Vitesse de lecture",
+ "Subtitles": "Sous-titres",
+ "subtitles off": "Sous-titres désactivés",
+ "Captions": "Sous-titres transcrits",
+ "captions off": "Sous-titres transcrits désactivés",
+ "Chapters": "Chapitres",
+ "Descriptions": "Descriptions",
+ "descriptions off": "descriptions désactivées",
+ "Audio Track": "Piste audio",
+ "Volume Level": "Niveau de volume",
+ "You aborted the media playback": "Vous avez interrompu la lecture de la vidéo.",
+ "A network error caused the media download to fail part-way.": "Une erreur de réseau a interrompu le téléchargement de la vidéo.",
+ "The media could not be loaded, either because the server or network failed or because the format is not supported.": "Cette vidéo n'a pas pu être chargée, soit parce que le serveur ou le réseau a échoué ou parce que le format n'est pas reconnu.",
+ "The media playback was aborted due to a corruption problem or because the media used features your browser did not support.": "La lecture de la vidéo a été interrompue à cause d'un problème de corruption ou parce que la vidéo utilise des fonctionnalités non prises en charge par votre navigateur.",
+ "No compatible source was found for this media.": "Aucune source compatible n'a été trouvée pour cette vidéo.",
+ "The media is encrypted and we do not have the keys to decrypt it.": "Le média est chiffré et nous n'avons pas les clés pour le déchiffrer.",
+ "Play Video": "Lire la vidéo",
+ "Close": "Fermer",
+ "Close Modal Dialog": "Fermer la boîte de dialogue modale",
+ "Modal Window": "Fenêtre modale",
+ "This is a modal window": "Ceci est une fenêtre modale",
+ "This modal can be closed by pressing the Escape key or activating the close button.": "Ce modal peut être fermé en appuyant sur la touche Échap ou activer le bouton de fermeture.",
+ ", opens captions settings dialog": ", ouvrir les paramètres des sous-titres transcrits",
+ ", opens subtitles settings dialog": ", ouvrir les paramètres des sous-titres",
+ ", opens descriptions settings dialog": ", ouvrir les paramètres des descriptions",
+ ", selected": ", sélectionné",
+ "captions settings": "Paramètres des sous-titres transcrits",
+ "subtitles settings": "Paramètres des sous-titres",
+ "descriptions settings": "Paramètres des descriptions",
+ "Text": "Texte",
+ "White": "Blanc",
+ "Black": "Noir",
+ "Red": "Rouge",
+ "Green": "Vert",
+ "Blue": "Bleu",
+ "Yellow": "Jaune",
+ "Magenta": "Magenta",
+ "Cyan": "Cyan",
+ "Background": "Arrière-plan",
+ "Window": "Fenêtre",
+ "Transparent": "Transparent",
+ "Semi-Transparent": "Semi-transparent",
+ "Opaque": "Opaque",
+ "Font Size": "Taille des caractères",
+ "Text Edge Style": "Style des contours du texte",
+ "None": "Aucun",
+ "Raised": "Élevé",
+ "Depressed": "Enfoncé",
+ "Uniform": "Uniforme",
+ "Dropshadow": "Ombre portée",
+ "Font Family": "Famille de polices",
+ "Proportional Sans-Serif": "Polices à chasse variable sans empattement (Proportional Sans-Serif)",
+ "Monospace Sans-Serif": "Polices à chasse fixe sans empattement (Monospace Sans-Serif)",
+ "Proportional Serif": "Polices à chasse variable avec empattement (Proportional Serif)",
+ "Monospace Serif": "Polices à chasse fixe avec empattement (Monospace Serif)",
+ "Casual": "Manuscrite",
+ "Script": "Scripte",
+ "Small Caps": "Petites capitales",
+ "Reset": "Réinitialiser",
+ "restore all settings to the default values": "Restaurer tous les paramètres aux valeurs par défaut",
+ "Done": "Terminé",
+ "Caption Settings Dialog": "Boîte de dialogue des paramètres des sous-titres transcrits",
+ "Beginning of dialog window. Escape will cancel and close the window.": "Début de la fenêtre de dialogue. La touche d'échappement annulera et fermera la fenêtre.",
+ "End of dialog window.": "Fin de la fenêtre de dialogue."
+});
+
+    });
+});;
+function legacy_activity_onclick_handler_1(e) { e.halt(); window.open('https://moodle.polymtl.ca/mod/resource/view.php?id=108799&redirect=1', '', 'width=710,height=550,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false; };
+function legacy_activity_onclick_handler_2(e) { e.halt(); window.open('https://moodle.polymtl.ca/mod/resource/view.php?id=108800&redirect=1', '', 'width=710,height=550,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false; };
+function legacy_activity_onclick_handler_3(e) { e.halt(); window.open('https://moodle.polymtl.ca/mod/resource/view.php?id=99661&redirect=1', '', 'width=710,height=550,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false; };
+function legacy_activity_onclick_handler_4(e) { e.halt(); window.open('https://moodle.polymtl.ca/mod/resource/view.php?id=99663&redirect=1', '', 'width=710,height=550,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false; };
+function legacy_activity_onclick_handler_5(e) { e.halt(); window.open('https://moodle.polymtl.ca/mod/resource/view.php?id=100374&redirect=1', '', 'width=710,height=550,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false; };
+function legacy_activity_onclick_handler_6(e) { e.halt(); window.open('https://moodle.polymtl.ca/mod/resource/view.php?id=100375&redirect=1', '', 'width=710,height=550,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false; };
+function legacy_activity_onclick_handler_7(e) { e.halt(); window.open('https://moodle.polymtl.ca/mod/resource/view.php?id=112396&redirect=1', '', 'width=710,height=550,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false; };
+function legacy_activity_onclick_handler_8(e) { e.halt(); window.open('https://moodle.polymtl.ca/mod/resource/view.php?id=102917&redirect=1', '', 'width=710,height=550,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false; };
+function legacy_activity_onclick_handler_9(e) { e.halt(); window.open('https://moodle.polymtl.ca/mod/resource/view.php?id=103552&redirect=1', '', 'width=710,height=550,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false; };
+function legacy_activity_onclick_handler_10(e) { e.halt(); window.open('https://moodle.polymtl.ca/mod/resource/view.php?id=103553&redirect=1', '', 'width=710,height=550,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false; };
+M.util.js_pending('core/search-input'); require(['core/search-input'], function(amd) {amd.init("5e4728d4c914a"); M.util.js_complete('core/search-input');});;
+
+require(
+[
+    'jquery',
+    'core_message/message_popover'
+],
+function(
+    $,
+    Popover
+) {
+    var toggle = $('#message-drawer-toggle-5e4728d4c9afd5e4728d4c7bb65');
+    Popover.init(toggle);
+});
+;
+
+        require(['jquery'], function($) {
+            $('#jump-to-activity').change(function() {
+                if (!$(this).val()) {
+                    return false;
+                }
+                $('#url_select_f5e4728d4c7bb614').submit();
+            });
+        });
+    ;
+
+require(['jquery', 'core_message/message_drawer'], function($, MessageDrawer) {
+    var root = $('#message-drawer-5e4728d4ceb1e5e4728d4c7bb615');
+    MessageDrawer.init(root, '5e4728d4ceb1e5e4728d4c7bb615', false);
+});
+;
+
+M.util.js_pending('theme_boost/loader');
+require(['theme_boost/loader'], function() {
+  M.util.js_complete('theme_boost/loader');
+});
+M.util.js_pending('theme_boost/drawer');
+require(['theme_boost/drawer'], function(mod) {
+    mod.init();
+  M.util.js_complete('theme_boost/drawer');
+});
+;
+M.util.js_pending('core/notification'); require(['core/notification'], function(amd) {amd.init(163321, []); M.util.js_complete('core/notification');});;
+M.util.js_pending('core/log'); require(['core/log'], function(amd) {amd.setConfig({"level":"warn"}); M.util.js_complete('core/log');});;
+M.util.js_pending('core/page_global'); require(['core/page_global'], function(amd) {amd.init(); M.util.js_complete('core/page_global');});M.util.js_complete("core/first");
+});
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"Modifi\u00e9 le","name":"Nom","error":"Erreur","info":"Information","yes":"Oui","no":"Non","ok":"OK","cancel":"Annuler","confirm":"Confirmer","areyousure":"En \u00eates-vous bien s\u00fbr\u00a0?","closebuttontitle":"Fermer","unknownerror":"Erreur inconnue"},"repository":{"type":"Type","size":"Taille","invalidjson":"Cha\u00eene JSON non valide","nofilesattached":"Aucun fichier joint","filepicker":"S\u00e9lecteur de fichiers","logout":"D\u00e9connexion","nofilesavailable":"Aucun fichier disponible","norepositoriesavailable":"D\u00e9sol\u00e9, aucun de vos d\u00e9p\u00f4ts actuels ne peut retourner de fichiers dans le format requis.","fileexistsdialogheader":"Le fichier existe","fileexistsdialog_editor":"Un fichier de ce nom a d\u00e9j\u00e0 \u00e9t\u00e9 joint au texte que vous modifiez.","fileexistsdialog_filemanager":"Un fichier de ce nom a d\u00e9j\u00e0 \u00e9t\u00e9 joint","renameto":"Renommer \u00e0 \u00ab\u00a0{$a}\u00a0\u00bb","referencesexist":"Ce fichier est utilis\u00e9 comme source par {$a} alias.","select":"S\u00e9lectionnez"},"admin":{"confirmdeletecomments":"Voulez-vous vraiment supprimer des commentaires\u00a0?","confirmation":"Confirmation"}};
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+(function() {Y.use("moodle-filter_glossary-autolinker",function() {M.filter_glossary.init_filter_autolinking({"courseid":0});
+});
+Y.use("moodle-filter_mathjaxloader-loader",function() {M.filter_mathjaxloader.configure({"mathjaxconfig":"\nMathJax.Hub.Config({\n    config: [\"Accessible.js\", \"Safe.js\"],\n    errorSettings: { message: [\"!\"] },\n    skipStartupTypeset: true,\n    messageStyle: \"none\"\n});\n","lang":"fr"});
+});
+M.util.help_popups.setup(Y);
+ M.util.js_pending('random5e4728d4c7bb616'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random5e4728d4c7bb616'); });
+})();
+//]]>
+</script>
+
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>
