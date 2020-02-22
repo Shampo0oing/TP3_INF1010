@@ -1,7 +1,6 @@
 #ifndef FILM_H
 #define FILM_H
-
-// To do
+#include "Media.h"
 
 class Film : public Media
 {
@@ -18,4 +17,7 @@ private:
     // Attributes
     std::string duree_;
 };
+
 #endif // FILM_H
+
+

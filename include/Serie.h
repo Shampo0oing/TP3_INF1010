@@ -2,7 +2,11 @@
 #define Serie_1_H
 
 #include <iomanip>
+#include "Media.h"
+#include "GestionnaireSaisons.h"
 // To do
+
+
 
 class Serie
     : public Media
@@ -19,3 +23,5 @@ public:
 };
 
 #endif // Serie_1_H
+
+

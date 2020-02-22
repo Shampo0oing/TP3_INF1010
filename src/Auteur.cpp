@@ -1,8 +1,9 @@
-// To do
+#include "Auteur.h"
+
+using namespace std;
 
 // To do
-Auteur::Auteur()
-// To do
+Auteur::Auteur(): nom_("AuteurTest"), anneeDeNaissance_(2019), nbMedias_(0)
 {
 }
 
@@ -66,5 +67,6 @@ std::ostream& operator<<(std::ostream& os, const Auteur& auteur)
 // To do
 std::istream& operator>>(std::istream& is, Auteur& auteur)
 {
-    // To do
+	is >> quoted(auteur.nom_) >> auteur.anneeDeNaissance_;
+	return is;
 }

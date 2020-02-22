@@ -2,7 +2,9 @@
 #define Librairie_H
 
 #include <functional>
-// To do
+#include"Serie.h"
+#include"Film.h"
+#include "GestionnaireAuteurs.h"
 
 class Librairie
 {

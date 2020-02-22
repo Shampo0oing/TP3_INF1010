@@ -3,12 +3,16 @@
 
 #include <algorithm>
 #include <vector>
-// To do
+#include "Episode.h"
 
 class Saison
 {
 public:
-    static constexpr size_t EPISODE_INEXSISTANTE = -1;
+    static constexpr 
+		
+		
+		
+	int EPISODE_INEXSISTANTE = -1;
 
     class SortByNumSaison
     {

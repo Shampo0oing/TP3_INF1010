@@ -2,7 +2,7 @@
 
 //! Constructeur de la classe GestionnaireAuteurs
 GestionnaireAuteurs::GestionnaireAuteurs()
-    : auteurs_(std::vector<Auteur>(16))
+    : auteurs_(std::vector<Auteur>(0))
 {
 }
 
@@ -11,10 +11,11 @@ GestionnaireAuteurs::GestionnaireAuteurs()
 //! \return          Un pointeur vers l'auteur. Le pointeur est nullptr si l'auteur n'existe pas.
 Auteur* GestionnaireAuteurs::chercherAuteur(const std::string& nomAuteur)
 {
-    for (size_t i = 0; i < auteurs_.size(); i++)
-        if (auteurs_[i] == nomAuteur)
-            return &auteurs_[i];
-
+	for (int i = 0; i < auteurs_.size(); i++) {
+		if (auteurs_[i].getNom() == nomAuteur) {
+			return &auteurs_[i];
+		}
+	}
     return nullptr;
 }
 
@@ -67,7 +68,7 @@ bool GestionnaireAuteurs::operator+=(const Auteur& auteur)
 //! \param gestionnaireAuteurs le gestionnaire que l'on veut afficher
 std::ostream& operator<<(std::ostream& os, const GestionnaireAuteurs& gestionnaireAuteurs)
 {
-    for (size_t i = 0; i < gestionnaireAuteurs.auteurs_.size(); i++)
+    for (int i = 0; i < gestionnaireAuteurs.auteurs_.size(); i++)
         // if(gestionnaireAuteurs.auteurs_[i] != NULL)
         os << gestionnaireAuteurs.auteurs_[i] << '\n';
 

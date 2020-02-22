@@ -1,73 +1,118 @@
-// To do
+﻿#include "Saison.h"
+#include <iostream>
 
-// To do
-Saison::Saison()
-    // To do
+using namespace std;
+//
+Saison::Saison() : numSaison_(1), episodes_(0), nbEpisodesmax_(0)
 {
 }
 
-// To do
-Saison::Saison(unsigned int numSaison, unsigned int nbEpisodemax)
-    // To do
+Saison::Saison(unsigned int numSaison, unsigned int nbEpisodemax): numSaison_(numSaison), nbEpisodesmax_(nbEpisodemax)
 {
 }
 
-// To do
+
 Saison::Saison(const Saison& saison)
 {
-    // To do
+	numSaison_ = saison.numSaison_; nbEpisodesmax_= saison.nbEpisodesmax_;
+	vector<unique_ptr<Episode>> vect;
+	for (int i = 0; i < saison.episodes_.size(); i++)
+		vect.push_back(make_unique<Episode>(*episodes_[i]));
+
+
 }
 
-// To do
 Saison::~Saison()
 {
-    // To do
+	episodes_.clear();
 }
 
 // To do
 Saison& Saison::operator+=(std::unique_ptr<Episode> episode)
 {
-    // To do
+	
+	if (episode) {
+		int index = trouverIndexEpisode(episode->getNumEpisode());
+		if (index > -1) {
+			episodes_.erase(episodes_.begin() + index);
+		}
+
+		episodes_.push_back(move(episode));
+		
+		
+		
+	};
+
+	sort(episodes_.begin(), episodes_.end(), Episode::SortByNumEpisode());
+	return *this;
 }
 
 // To do
 Saison& Saison::operator-=(unsigned int numEpisode)
 {
-    // To do
+	int index = trouverIndexEpisode(numEpisode);
+
+	if (index >= 0) {
+		episodes_.erase(episodes_.begin() + index);
+
+	}
+	return *this;
 }
 
 // To do
 bool Saison::operator==(unsigned int numSaison)
 {
-    // To do
+	if (numSaison_ == numSaison) {
+		return true;
+	}
+	return false;
+}
+
+bool operator==(unsigned int numSaison, Saison saison) {
+	return(saison == numSaison);
 }
 
 // To do
 std::ostream& operator<<(std::ostream& os, const Saison& saison)
 {
-    // To do
+	os << "\t" << "Saison" << " " << "0" << saison.numSaison_ << ":" << " " << saison.episodes_.size() << "/" << saison.nbEpisodesmax_;
+	if (saison.episodes_.size() == saison.nbEpisodesmax_) {
+		os << "(Terminee)" << endl;
+	}
+	else {
+		os << "(En cours)" << endl;
+	}
+	for (int i = 0; i < saison.episodes_.size(); i++)
+		os << "\t"<<"\t"<< *saison.episodes_[i] << endl;
+   return os;
 }
 
 // To do
 std::istream& operator>>(std::istream& is, Saison& saison)
 {
-    // To do
+	is >> saison.numSaison_ >> saison.nbEpisodesmax_;
+	return  is;
 }
 
 // To do
 unsigned int Saison::getNumSaison() const
 {
-    // To do
+	return numSaison_;
 }
 
 // To do
 size_t Saison::getNbEpisodes() const
 {
-   // To do
+	return(episodes_.size());
 }
 
 // To do
 size_t Saison::trouverIndexEpisode(unsigned int numEpisode)
 {
-    // To do
+	for (int i = 0; i < episodes_.size(); i++) {
+		if (episodes_[i]->getNumEpisode() == numEpisode) {
+			return i;
+		}
+	}
+	return -1;
 }

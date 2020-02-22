@@ -50,6 +50,8 @@ public:
     Media(const Media& media);
     virtual ~Media();
 
+	//std::unique_ptr<Auteur> getAuteur();
+
     void ajouterPaysRestreint(Pays pays);
     void supprimerPaysRestreints();
     bool estRestreintDansPays(Pays pays) const;
@@ -74,8 +76,9 @@ protected:
     Genre genre_;
     Pays pays_;
     bool estRestreintParAge_;
-    Auteur* auteur_;
+	Auteur* auteur_;
     Media::TypeMedia typeMedia_;
     std::vector<Pays> paysRestreints_;
 };
+
 #endif // MEDIA_H
