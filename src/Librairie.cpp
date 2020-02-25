@@ -8,7 +8,7 @@ Librairie::Librairie(const Librairie& librairie)
 	
 	for (int i = 0; i < librairie.medias_.size(); i++)
 		medias_.push_back(move(librairie.medias_[i]->clone()));
-		//medias_.push_back(move(make_unique<Media>(*librairie.medias_[i]);
+	
 	
 }
 
