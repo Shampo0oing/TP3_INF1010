@@ -41,7 +41,7 @@ namespace {
 
 
 // To do
-Media::Media(Auteur* auteur, Media::TypeMedia typeMedia) :auteur_(auteur), typeMedia_(typeMedia)
+Media::Media(Auteur* auteur, Media::TypeMedia typeMedia) :auteur_(auteur), typeMedia_(typeMedia), anneeDeSortie_(0), estRestreintParAge_(0), genre_(to_enum<Genre>(0)), pays_(to_enum<Pays>(0))
 {
 
 }

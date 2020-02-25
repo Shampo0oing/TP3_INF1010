@@ -3,7 +3,7 @@
 
 using namespace std;
 //
-Saison::Saison() : numSaison_(1), episodes_(0), nbEpisodesmax_(0)
+Saison::Saison() : numSaison_(1), nbEpisodesmax_(0)
 {
 }
 
@@ -77,7 +77,7 @@ std::ostream& operator<<(std::ostream& os, const Saison& saison)
 {
 	os << "\t" << "Saison" << " " << "0" << saison.numSaison_ << ":" << " " << saison.episodes_.size() << "/" << saison.nbEpisodesmax_;
 	if (saison.episodes_.size() == saison.nbEpisodesmax_) {
-		os << "(Terminee)" << endl;
+		os << "(Terminée)" << endl;
 	}
 	else {
 		os << "(En cours)" << endl;
