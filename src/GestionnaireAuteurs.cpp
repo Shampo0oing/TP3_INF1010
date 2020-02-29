@@ -1,6 +1,10 @@
+//! implémentation de classe GestionnaireAuteurs
+//! \author Samuel Lavallée et Anthelme Clisson
+//! \date 29 fevrier 2020
+
 #include "GestionnaireAuteurs.h"
 
-//! Constructeur de la classe GestionnaireAuteurs
+//! constructeur par défaut de classe gestionnaireAuteurs 
 GestionnaireAuteurs::GestionnaireAuteurs()
     : auteurs_(std::vector<Auteur>(0))
 {

@@ -1,3 +1,7 @@
+//! implémentation de classe Auteur
+//! \author Samuel Lavallée et Anthelme Clisson
+//! \date 29 fevrier 2020
+
 #include "Auteur.h"
 
 using namespace std;
@@ -56,6 +60,7 @@ bool Auteur::operator==(const std::string& nom) const
 //! operateur qui affiche un auteur
 //! \param os Le stream dans lequel afficher
 //! \param auteur l'auteur a afficher
+
 std::ostream& operator<<(std::ostream& os, const Auteur& auteur)
 {
     os << "Nom: " << auteur.nom_ << " | Date de naissance: " << auteur.anneeDeNaissance_
@@ -64,7 +69,10 @@ std::ostream& operator<<(std::ostream& os, const Auteur& auteur)
     return os;
 }
 
-// To do
+//! opérateur qui lit un autreur 
+//! \param istream duquel lire
+//! \param auteur à lire 
+//! \return istream pour appel en cascade
 std::istream& operator>>(std::istream& is, Auteur& auteur)
 {
 	is >> quoted(auteur.nom_) >> auteur.anneeDeNaissance_;

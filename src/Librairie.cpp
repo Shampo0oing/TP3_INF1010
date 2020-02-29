@@ -280,9 +280,9 @@ bool Librairie::lireLigneSaison(std::istream& is, GestionnaireAuteurs&)
 	Saison saison;
 	is >> saison;
 	unique_ptr<Saison> ptrSaison = make_unique<Saison>(saison);
-	string nomSerie;
-	is >> quoted(nomSerie);
-	ajouterSaison(nomSerie, move(ptrSaison));
+	string nomSaison;
+	is >> quoted(nomSaison);
+	ajouterSaison(nomSaison, move(ptrSaison));
 	return true;
 
 }

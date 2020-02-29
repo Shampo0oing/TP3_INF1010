@@ -1,3 +1,7 @@
+//! implémentation de classe Utilisateur
+//! \author Samuel Lavallée et Anthelme Clisson
+//! \date 29 fevrier 2020
+
 #include "Utilisateur.h"
 
 //! Constructeur de la classe Utilisateur
