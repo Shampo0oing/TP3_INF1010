@@ -1,3 +1,7 @@
+//! implémentation de classe Media
+//! \author Samuel Lavallée et Anthelme Clisson
+//! \date 29 fevrier 2020
+
 #include "Media.h"
 
 
@@ -40,33 +44,44 @@ namespace {
 
 
 
-// To do
+//! Constructeur par parametres de la classe Media
+//! \param auteur: auteur dur media
+//! \param typeMedia: type du media
 Media::Media(Auteur* auteur, Media::TypeMedia typeMedia) :auteur_(auteur), typeMedia_(typeMedia), anneeDeSortie_(0), estRestreintParAge_(0), genre_(to_enum<Genre>(0)), pays_(to_enum<Pays>(0))
 {
 
 }
 
-// To do
+//! Constructeur par parametres de la classe Media
+//! \param nom: nom dur media
+//! \param anneeDeSortie: année de sortie du média
+//! \param genre: genre du média
+//! \param pays: pays d'origine du média
+//! \param estResteintParAge: si oui ou non le média à une restriction d'age
+//! \param auteur: auteur dur media
+//! \param typeMedia: type du media
 Media::Media(const std::string& nom, unsigned int anneeDeSortie, Genre genre, Pays pays,
 	bool estRestreintParAge, Auteur* auteur, Media::TypeMedia typeMedia) : nom_(nom), anneeDeSortie_(anneeDeSortie), genre_(genre), pays_(pays), estRestreintParAge_(estRestreintParAge)
 	, auteur_(auteur), typeMedia_(typeMedia)
 {
 }
 
-// To do
+//! Constructeur par copie de la classe Media
+//! \param serie: le média à copier
 Media::Media(const Media& serie) :Media(serie.nom_, serie.anneeDeSortie_, serie.genre_, serie.pays_, serie.estRestreintParAge_, serie.auteur_, serie.typeMedia_)
 {
 
 	paysRestreints_ = serie.paysRestreints_;
 }
 
-// To do
+//! Destructeur par default de la classe Media
 Media::~Media()
 {
 	paysRestreints_.clear();
 }
 
-// To do
+//! Méthode qui ajoute un pays restreints
+//! \param pays: pays à ajouter
 void Media::ajouterPaysRestreint(Pays pays)
 {
 	paysRestreints_.push_back(pays);
@@ -74,13 +89,15 @@ void Media::ajouterPaysRestreint(Pays pays)
 
 }
 
-// To do
+//! Méthode qui supprime les pays restreints
 void Media::supprimerPaysRestreints()
 {
 	paysRestreints_.clear();
 }
 
-// To do
+//! Méthode qui retourne si le pays est restreint
+//! \param pays: le pays dont on vérifie s'il est restreint
+//! \return true si le pays est restreint, fals sinon
 bool Media::estRestreintDansPays(Pays pays) const
 {
 	for (std::size_t i = 0; i < paysRestreints_.size(); i++)
@@ -93,13 +110,16 @@ bool Media::estRestreintDansPays(Pays pays) const
 	return false;
 }
 
-// To do
+//! Méthode qui retourne le vector de pays restreints par age
+//! \return le vector de pays restreint par age
 bool Media::estRestreintParAge() const
 {
 	return estRestreintParAge_;
 }
 
-// To do
+//! Méthode qui affiche les informations du médias
+//! \param os: stream dans lequel afficher
+//! \return stream pour appel en cascade
 std::ostream& Media::afficher(std::ostream& os) const
 {
 	os << nom_ << "\n\tDate de sortie: " << anneeDeSortie_
@@ -117,8 +137,10 @@ std::ostream& Media::afficher(std::ostream& os) const
 }
 
 
-
-// To do
+//! Opérateur qui utilise la fonction afficher
+//! \param os: stream dans lequel afficher
+//! \param media: média que l'on veut afficher
+//! \return stream pour appel en cascade
 std::ostream& operator<<(std::ostream& os, const Media& media)
 {
 	media.afficher(os);
@@ -126,25 +148,30 @@ std::ostream& operator<<(std::ostream& os, const Media& media)
 	return os;
 }
 
-// To do
+//! Méthode qui retourne le genre
+//! \return le genre
 Media::Genre Media::getGenre() const
 {
 	return genre_;
 }
 
-// To do
+//! Méthode qui retourne le nom
+//! \return le nom
 const std::string& Media::getNom() const
 {
 	return nom_;
 }
 
-// To do
+//! Méthode qui retourne le type de média
+//! \return le type de média
 Media::TypeMedia Media::getTypeMedia() const
 {
 	return typeMedia_;
 }
 
-// To do
+//! Méthode qui lit et initialise les éléments de la classe médias
+//! \param is: stream dans lequel on lit
+//! \return stream pour appel en cascade
 std::istream& Media::lire(std::istream& is)
 {
 	int genre, pays;
@@ -158,14 +185,17 @@ std::istream& Media::lire(std::istream& is)
 };
 
 
-// To do
+//! Méthode qui utilise la méthode lire
+//! \param is: stream dans lequel on lit
+//! \return stream pour appel en cascade
 std::istream& operator>>(std::istream& is, Media& media)
 {
 	media.lire(is);
 	return is;
 }
 
-// To do
+//! Méthode qui retourne une copie de l'objet courant
+//! \return une copie de l'objet courant
 std::unique_ptr<Media> Media::clone() const
 {
 
