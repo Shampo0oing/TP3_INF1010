@@ -95,9 +95,9 @@ void Media::supprimerPaysRestreints()
 	paysRestreints_.clear();
 }
 
-//! Méthode qui retourne si le pays est restreint
-//! \param pays: le pays dont on vérifie s'il est restreint
-//! \return true si le pays est restreint, fals sinon
+//! Méthode qui retourne si le média est restreint dans le pays
+//! \param pays: le pays dont on vérifie la restriction
+//! \return true si le média est restreint dans le pays, fals sinon
 bool Media::estRestreintDansPays(Pays pays) const
 {
 	for (std::size_t i = 0; i < paysRestreints_.size(); i++)
